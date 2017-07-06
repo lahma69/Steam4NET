@@ -35,15 +35,15 @@ namespace Steam4NET
 		[VTableSlot(11)]
 		string GetPlayerNickname(CSteamID steamIDPlayer);
 		[VTableSlot(12)]
-		Int16 GetFriendsGroupCount();
+		Int32 GetFriendsGroupCount();
 		[VTableSlot(13)]
-		Int16 GetFriendsGroupIDByIndex(Int32 arg0);
+		UInt16 GetFriendsGroupIDByIndex(Int32 groupIndex);
 		[VTableSlot(14)]
-		string GetFriendsGroupName(Int16 arg0);
+		string GetFriendsGroupName(UInt16 friendGroupID);
 		[VTableSlot(15)]
-		Int32 GetFriendsGroupMembersCount(Int16 arg0);
+		Int32 GetFriendsGroupMembersCount(UInt16 friendGroupID);
 		[VTableSlot(16)]
-		Int32 GetFriendsGroupMembersList(Int16 arg0, ref CSteamID arg1, Int32 arg2);
+		void GetFriendsGroupMembersList(UInt16 friendGroupID, ref CSteamID pMembersOut, Int32 nMembersCountMax);
 		[VTableSlot(17)]
 		bool HasFriend(CSteamID steamIDFriend, Int32 iFriendFlags);
 		[VTableSlot(18)]

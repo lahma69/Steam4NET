@@ -7,6 +7,7 @@ using Steam4NET.Attributes;
 namespace Steam4NET
 {
 
+	[InterfaceVersion("STEAMINVENTORY_INTERFACE_V001")]
 	public interface ISteamInventory001
 	{
 		[VTableSlot(0)]
@@ -53,5 +54,9 @@ namespace Steam4NET
 		bool GetItemDefinitionIDs(ref Int32 pItemDefIDs, ref UInt32 punItemDefIDsArraySize);
 		[VTableSlot(21)]
 		bool GetItemDefinitionProperty(Int32 iDefinition, string pchPropertyName, StringBuilder pchValueBuffer, ref UInt32 punValueBufferSize);
+		[VTableSlot(22)]
+		UInt64 RequestEligiblePromoItemDefinitionsIDs(CSteamID arg0);
+		[VTableSlot(23)]
+		bool GetEligiblePromoItemDefinitionIDs(CSteamID arg0, ref Int32 arg1, ref UInt32 arg2);
 	};
 }

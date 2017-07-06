@@ -23,10 +23,10 @@ namespace Steam4NET
 		[VTableSlot(5)]
 		bool RequestAppInfoUpdate(ref UInt32 pAppIDs, Int32 nNumAppIDs);
 		[VTableSlot(6)]
-		void NotifyAppEventTriggered(UInt32 unAppID, EAppEvent eAppEvent);
-		[VTableSlot(7)]
 		Int32 GetDLCCount(UInt32 unAppID);
-		[VTableSlot(8)]
+		[VTableSlot(7)]
 		bool BGetDLCDataByIndex(UInt32 unAppID, Int32 iDLC, ref UInt32 pDlcAppID, ref bool pbAvailable, StringBuilder pchName, Int32 cchNameBufferSize);
+		[VTableSlot(8)]
+		Int32 GetAppType(UInt32 unAppID);
 	};
 }

@@ -1,4 +1,4 @@
-#include "../../open-steamworks/Open Steamworks/Steamworks.h"
+#include "../../open-steamworks/OpenSteamworks/Steamworks.h"
 
 int main()
 {

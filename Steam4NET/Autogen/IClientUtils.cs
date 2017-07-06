@@ -49,64 +49,88 @@ namespace Steam4NET
 		[VTableSlot(18)]
 		void SetAPIDebuggingActive(bool bActive, bool bVerbose);
 		[VTableSlot(19)]
-		bool IsAPICallCompleted(UInt64 hSteamAPICall, ref bool pbFailed);
+		Int32 AllocPendingAPICallHandle();
 		[VTableSlot(20)]
-		ESteamAPICallFailure GetAPICallFailureReason(UInt64 hSteamAPICall);
+		bool IsAPICallCompleted(UInt64 hSteamAPICall, ref bool pbFailed);
 		[VTableSlot(21)]
-		bool GetAPICallResult(UInt64 hSteamAPICall, Byte[] pCallback, Int32 cubCallback, Int32 iCallbackExpected, ref bool pbFailed);
+		ESteamAPICallFailure GetAPICallFailureReason(UInt64 hSteamAPICall);
 		[VTableSlot(22)]
-		bool SignalAppsToShutDown();
+		bool GetAPICallResult(UInt64 hSteamAPICall, Byte[] pCallback, Int32 cubCallback, Int32 iCallbackExpected, ref bool pbFailed);
 		[VTableSlot(23)]
-		bool TerminateAllAppsMultiStep(UInt32 uUnk);
+		void PostInProcAPICallResult(UInt64 arg0, Byte[] arg1, Int32 arg2, Int32 arg3);
 		[VTableSlot(24)]
-		UInt32 GetCellID();
+		bool SignalAppsToShutDown();
 		[VTableSlot(25)]
-		bool BIsGlobalInstance();
+		bool SignalServiceAppsToDisconnect();
 		[VTableSlot(26)]
-		UInt64 CheckFileSignature(string szFileName);
+		bool TerminateAllAppsMultiStep(UInt32 uUnk);
 		[VTableSlot(27)]
-		UInt64 GetBuildID();
+		UInt32 GetCellID();
 		[VTableSlot(28)]
-		void SetCurrentUIMode(EUIMode eUIMode);
+		bool BIsGlobalInstance();
 		[VTableSlot(29)]
-		void SetLauncherType(ELauncherType eLauncherType);
+		UInt64 CheckFileSignature(string szFileName);
 		[VTableSlot(30)]
-		ELauncherType GetLauncherType();
+		UInt64 GetBuildID();
 		[VTableSlot(31)]
-		bool ShowGamepadTextInput(EGamepadTextInputMode eInputMode, EGamepadTextInputLineMode eInputLineMode, string szText, UInt32 uMaxLength, string szUnk);
+		void SetCurrentUIMode(EUIMode eUIMode);
 		[VTableSlot(32)]
-		UInt32 GetEnteredGamepadTextLength();
+		EUIMode GetCurrentUIMode();
 		[VTableSlot(33)]
-		bool GetEnteredGamepadTextInput(StringBuilder pchValue, UInt32 cchValueMax);
+		void SetLauncherType(ELauncherType eLauncherType);
 		[VTableSlot(34)]
-		void GamepadTextInputClosed(Int32 hSteamPipe, bool arg1, string arg2);
+		ELauncherType GetLauncherType();
 		[VTableSlot(35)]
-		void SetSpew(ESpewGroup eSpewGroup, Int32 iSpewLevel, Int32 iLogLevel);
+		bool ShowGamepadTextInput(EGamepadTextInputMode eInputMode, EGamepadTextInputLineMode eInputLineMode, string szText, UInt32 uMaxLength, string szUnk);
 		[VTableSlot(36)]
-		bool BDownloadsDisabled();
+		UInt32 GetEnteredGamepadTextLength();
 		[VTableSlot(37)]
-		void SetFocusedWindow(EWindowType eWindowType, CGameID gameID, UInt64 ulUnk);
+		bool GetEnteredGamepadTextInput(StringBuilder pchValue, UInt32 cchValueMax);
 		[VTableSlot(38)]
-		string GetSteamUILanguage();
+		void GamepadTextInputClosed(Int32 hSteamPipe, bool arg1, string arg2);
 		[VTableSlot(39)]
-		UInt64 CheckSteamReachable();
+		void SetSpew(ESpewGroup eSpewGroup, Int32 iSpewLevel, Int32 iLogLevel);
 		[VTableSlot(40)]
-		void SetLastGameLaunchMethod(EGameLaunchMethod eGameLaunchMethod);
+		bool BDownloadsDisabled();
 		[VTableSlot(41)]
-		bool IsSteamOS();
+		void SetFocusedWindow(EWindowType eWindowType, CGameID gameID, UInt64 ulUnk);
 		[VTableSlot(42)]
-		void SetVideoAdapterInfo(Int32 arg0, Int32 arg1, Int32 arg2, Int32 arg3, Int32 arg4);
+		string GetSteamUILanguage();
 		[VTableSlot(43)]
-		void SetControllerOVerrideMode(EWindowType eWindowType, CGameID gameID, string szUnk);
+		UInt64 CheckSteamReachable();
 		[VTableSlot(44)]
-		void SetOverlayWindowFocusForPipe(bool arg0, bool arg1, CGameID gameID);
+		void SetLastGameLaunchMethod(EGameLaunchMethod eGameLaunchMethod);
 		[VTableSlot(45)]
-		CGameID GetGameOverlayUIInstanceFocusGameID(ref bool pbUnk);
+		void SetVideoAdapterInfo(Int32 arg0, Int32 arg1, Int32 arg2, Int32 arg3, Int32 arg4);
 		[VTableSlot(46)]
-		bool SetControllerConfigFileForAppID(UInt32 unAppID, string pszControllerConfigFile);
+		void SetControllerOverrideMode(CGameID gameID, string szUnk);
 		[VTableSlot(47)]
-		bool GetControllerConfigFileForAppID(UInt32 unAppID, string pszControllerConfigFile, UInt32 cubControllerConfigFile);
+		void SetOverlayWindowFocusForPipe(bool arg0, bool arg1, CGameID gameID);
 		[VTableSlot(48)]
+		CGameID GetGameOverlayUIInstanceFocusGameID(ref bool pbUnk);
+		[VTableSlot(49)]
+		bool SetControllerConfigFileForAppID(UInt32 unAppID, string pszControllerConfigFile);
+		[VTableSlot(50)]
+		bool GetControllerConfigFileForAppID(UInt32 unAppID, string pszControllerConfigFile, UInt32 cubControllerConfigFile);
+		[VTableSlot(51)]
 		bool IsSteamRunningInVR();
+		[VTableSlot(52)]
+		bool BIsRunningOnAlienwareAlpha();
+		[VTableSlot(53)]
+		void StartVRDashboard();
+		[VTableSlot(54)]
+		bool IsVRHeadsetStreamingEnabled(UInt32 unk);
+		[VTableSlot(55)]
+		void SetVRHeadsetStreamingEnabled(UInt32 unk, bool arg1);
+		[VTableSlot(56)]
+		Int32 GenerateSupportSystemReport();
+		[VTableSlot(57)]
+		bool GetSupportSystemReport(StringBuilder arg0, UInt32 unk, Byte[] unk_2, UInt32 unk_3);
+		[VTableSlot(58)]
+		UInt32 GetAppIdForPid(UInt32 unk);
+		[VTableSlot(59)]
+		void SetClientUIProcess();
+		[VTableSlot(60)]
+		bool BIsClientUIInForeground();
 	};
 }

@@ -29,131 +29,131 @@ namespace Steam4NET
 		[VTableSlot(8)]
 		UInt32 GetFriendArray(ref CSteamID arg0, StringBuilder arg1, Int32 arg2, Int32 arg3);
 		[VTableSlot(9)]
-		CSteamID GetFriendByIndex(Int32 iFriend, EFriendFlags iFriendFlags);
+		Int32 GetFriendArrayInGame(ref CSteamID arg0, ref UInt64 arg1, Int32 arg2);
 		[VTableSlot(10)]
-		Int32 GetOnlineFriendCount();
+		CSteamID GetFriendByIndex(Int32 iFriend, EFriendFlags iFriendFlags);
 		[VTableSlot(11)]
-		EFriendRelationship GetFriendRelationship(CSteamID steamIDFriend);
+		Int32 GetOnlineFriendCount();
 		[VTableSlot(12)]
-		EPersonaState GetFriendPersonaState(CSteamID steamIDFriend);
+		EFriendRelationship GetFriendRelationship(CSteamID steamIDFriend);
 		[VTableSlot(13)]
-		string GetFriendPersonaName(CSteamID steamIDFriend);
+		EPersonaState GetFriendPersonaState(CSteamID steamIDFriend);
 		[VTableSlot(14)]
-		Int32 GetSmallFriendAvatar(CSteamID steamIDFriend);
+		string GetFriendPersonaName(CSteamID steamIDFriend);
 		[VTableSlot(15)]
-		Int32 GetMediumFriendAvatar(CSteamID steamIDFriend);
+		Int32 GetSmallFriendAvatar(CSteamID steamIDFriend);
 		[VTableSlot(16)]
-		Int32 GetLargeFriendAvatar(CSteamID steamIDFriend);
+		Int32 GetMediumFriendAvatar(CSteamID steamIDFriend);
 		[VTableSlot(17)]
-		void SetFriendRegValue(CSteamID steamIDFriend, string pchKey, string pchValue);
+		Int32 GetLargeFriendAvatar(CSteamID steamIDFriend);
 		[VTableSlot(18)]
-		string GetFriendRegValue(CSteamID steamIDFriend, string pchKey);
+		bool BGetFriendAvatarURL(StringBuilder arg0, UInt32 arg1, CSteamID arg2, Int32 arg3);
 		[VTableSlot(19)]
-		bool DeleteFriendRegValue(CSteamID steamID, string pchKey);
+		void SetFriendRegValue(CSteamID steamIDFriend, string pchKey, string pchValue);
 		[VTableSlot(20)]
-		bool GetFriendGamePlayed(CSteamID steamID, ref FriendGameInfo_t pGamePlayInfo);
+		string GetFriendRegValue(CSteamID steamIDFriend, string pchKey);
 		[VTableSlot(21)]
-		string GetFriendGamePlayedExtraInfo(CSteamID steamIDFriend);
+		bool DeleteFriendRegValue(CSteamID steamID, string pchKey);
 		[VTableSlot(22)]
-		CSteamID GetFriendGameServer(CSteamID steamIDFriend);
+		bool GetFriendGamePlayed(CSteamID steamID, ref FriendGameInfo_t pGamePlayInfo);
 		[VTableSlot(23)]
-		EPersonaStateFlag GetFriendPersonaStateFlags(CSteamID steamIDFriend);
+		string GetFriendGamePlayedExtraInfo(CSteamID steamIDFriend);
 		[VTableSlot(24)]
-		bool IsFriendGameOnConsole(CSteamID steamIDFriend);
+		CSteamID GetFriendGameServer(CSteamID steamIDFriend);
 		[VTableSlot(25)]
-		FriendSessionStateInfo_t GetFriendSessionStateInfo(CSteamID steamIDFriend);
+		EPersonaStateFlag GetFriendPersonaStateFlags(CSteamID steamIDFriend);
 		[VTableSlot(26)]
-		EUserRestriction GetFriendRestrictions(CSteamID steamIDFriend);
+		bool IsFriendGameOnConsole(CSteamID steamIDFriend);
 		[VTableSlot(27)]
-		string GetFriendPersonaNameHistory(CSteamID steamIDFriend, Int32 iPersonaName);
+		FriendSessionStateInfo_t GetFriendSessionStateInfo(CSteamID steamIDFriend);
 		[VTableSlot(28)]
-		UInt32 GetFriendSteamLevel(CSteamID steamIDFriend);
+		EUserRestriction GetFriendRestrictions(CSteamID steamIDFriend);
 		[VTableSlot(29)]
-		UInt64 RequestPersonaNameHistory(CSteamID steamIDFriend);
+		string GetFriendPersonaNameHistory(CSteamID steamIDFriend, Int32 iPersonaName);
 		[VTableSlot(30)]
-		string GetFriendPersonaNameHistoryAndDate(CSteamID steamIDFriend, Int32 iPersonaName, ref UInt32 puTime);
+		UInt64 RequestPersonaNameHistory(CSteamID steamIDFriend);
 		[VTableSlot(31)]
-		bool AddFriend(CSteamID steamID);
+		string GetFriendPersonaNameHistoryAndDate(CSteamID steamIDFriend, Int32 iPersonaName, ref UInt32 puTime);
 		[VTableSlot(32)]
-		bool RemoveFriend(CSteamID steamID);
+		bool AddFriend(CSteamID steamID);
 		[VTableSlot(33)]
-		bool HasFriend(CSteamID steamID, EFriendFlags iFriendFlags);
+		bool RemoveFriend(CSteamID steamID);
 		[VTableSlot(34)]
-		Int32 AddFriendByName(string pchEmailOrAccountName);
+		bool HasFriend(CSteamID steamID, EFriendFlags iFriendFlags);
 		[VTableSlot(35)]
-		bool InviteFriendByEmail(string pchEmailAddress);
-		[VTableSlot(36)]
 		bool RequestUserInformation(CSteamID steamIDUser, bool bRequireNameOnly);
-		[VTableSlot(37)]
+		[VTableSlot(36)]
 		bool SetIgnoreFriend(CSteamID steamIDFriend, bool bIgnore);
-		[VTableSlot(38)]
+		[VTableSlot(37)]
 		bool ReportChatDeclined(CSteamID steamID);
-		[VTableSlot(39)]
+		[VTableSlot(38)]
 		bool CreateFriendsGroup(string pchGroupName);
-		[VTableSlot(40)]
+		[VTableSlot(39)]
 		bool DeleteFriendsGroup(Int16 iGroupID);
-		[VTableSlot(41)]
+		[VTableSlot(40)]
 		bool RenameFriendsGroup(string pchNewGroupName, Int16 iGroupID);
-		[VTableSlot(42)]
+		[VTableSlot(41)]
 		bool AddFriendToGroup(CSteamID steamID, Int16 iGroupID);
-		[VTableSlot(43)]
+		[VTableSlot(42)]
 		bool RemoveFriendFromGroup(CSteamID steamID, Int16 iGroupID);
-		[VTableSlot(44)]
+		[VTableSlot(43)]
 		bool IsFriendMemberOfFriendsGroup(CSteamID steamID, Int16 iGroupID);
-		[VTableSlot(45)]
+		[VTableSlot(44)]
 		Int16 GetFriendsGroupCount();
-		[VTableSlot(46)]
+		[VTableSlot(45)]
 		Int16 GetFriendsGroupIDByIndex(Int16 iGroupIndex);
-		[VTableSlot(47)]
+		[VTableSlot(46)]
 		string GetFriendsGroupName(Int16 iGroupID);
-		[VTableSlot(48)]
+		[VTableSlot(47)]
 		Int16 GetFriendsGroupMembershipCount(Int16 iGroupID);
-		[VTableSlot(49)]
+		[VTableSlot(48)]
 		CSteamID GetFirstFriendsGroupMember(Int16 iGroupID);
-		[VTableSlot(50)]
+		[VTableSlot(49)]
 		CSteamID GetNextFriendsGroupMember(Int16 iGroupID);
-		[VTableSlot(51)]
+		[VTableSlot(50)]
 		Int16 GetGroupFriendsMembershipCount(CSteamID steamID);
-		[VTableSlot(52)]
+		[VTableSlot(51)]
 		Int16 GetFirstGroupFriendsMember(CSteamID steamID);
-		[VTableSlot(53)]
+		[VTableSlot(52)]
 		Int16 GetNextGroupFriendsMember(CSteamID steamID);
-		[VTableSlot(54)]
+		[VTableSlot(53)]
 		string GetPlayerNickname(CSteamID playerSteamID);
-		[VTableSlot(55)]
+		[VTableSlot(54)]
 		bool SetPlayerNickname(CSteamID playerSteamID, string cszNickname);
+		[VTableSlot(55)]
+		UInt32 GetFriendSteamLevel(CSteamID steamIDFriend);
 		[VTableSlot(56)]
-		UInt32 GetFriendsSteamLevel(CSteamID steamIDFriend);
-		[VTableSlot(57)]
 		Int32 GetChatMessagesCount(CSteamID steamIDFriend);
-		[VTableSlot(58)]
+		[VTableSlot(57)]
 		Int32 GetChatMessage(CSteamID steamIDFriend, Int32 iChatID, Byte[] pvData, Int32 cubData, ref EChatEntryType peChatEntryType, ref CSteamID pSteamIDChatter, ref UInt32 puTime);
-		[VTableSlot(59)]
+		[VTableSlot(58)]
 		bool SendMsgToFriend(CSteamID steamIDFriend, EChatEntryType eChatEntryType, Byte[] pvMsgBody, Int32 cubMsgBody);
-		[VTableSlot(60)]
+		[VTableSlot(59)]
 		void ClearChatHistory(CSteamID steamIDFriend);
-		[VTableSlot(61)]
+		[VTableSlot(60)]
 		Int32 GetKnownClanCount();
-		[VTableSlot(62)]
+		[VTableSlot(61)]
 		CSteamID GetKnownClanByIndex(Int32 iClan);
-		[VTableSlot(63)]
+		[VTableSlot(62)]
 		Int32 GetClanCount();
-		[VTableSlot(64)]
+		[VTableSlot(63)]
 		CSteamID GetClanByIndex(Int32 iClan);
-		[VTableSlot(65)]
+		[VTableSlot(64)]
 		string GetClanName(CSteamID steamIDClan);
-		[VTableSlot(66)]
+		[VTableSlot(65)]
 		string GetClanTag(CSteamID steamIDClan);
-		[VTableSlot(67)]
+		[VTableSlot(66)]
 		bool GetFriendActivityCounts(ref Int32 pnOnline, ref Int32 pnInGame, bool bExcludeTaggedFriends);
-		[VTableSlot(68)]
+		[VTableSlot(67)]
 		bool GetClanActivityCounts(CSteamID steamID, ref Int32 pnOnline, ref Int32 pnInGame, ref Int32 pnChatting);
-		[VTableSlot(69)]
+		[VTableSlot(68)]
 		UInt64 DownloadClanActivityCounts(ref CSteamID groupIDs, Int32 nIds);
-		[VTableSlot(70)]
+		[VTableSlot(69)]
 		bool GetFriendsGroupActivityCounts(Int16 iGroupID, ref Int32 pnOnline, ref Int32 pnInGame);
-		[VTableSlot(71)]
+		[VTableSlot(70)]
 		bool IsClanPublic(CSteamID steamID);
+		[VTableSlot(71)]
+		bool IsClanOfficialGameGroup(CSteamID steamID);
 		[VTableSlot(72)]
 		UInt64 JoinClanChatRoom(CSteamID groupID);
 		[VTableSlot(73)]
@@ -441,34 +441,30 @@ namespace Steam4NET
 		[VTableSlot(214)]
 		bool HideFriend(CSteamID steamIDFriend, bool bHide);
 		[VTableSlot(215)]
-		string GetFriendFacebookName(CSteamID steamIDFriend);
-		[VTableSlot(216)]
-		UInt64 GetFriendFacebookID(CSteamID steamIDFriend);
-		[VTableSlot(217)]
 		UInt64 GetFollowerCount(CSteamID steamID);
-		[VTableSlot(218)]
+		[VTableSlot(216)]
 		UInt64 IsFollowing(CSteamID steamID);
-		[VTableSlot(219)]
+		[VTableSlot(217)]
 		UInt64 EnumerateFollowingList(UInt32 uStartIndex);
-		[VTableSlot(220)]
+		[VTableSlot(218)]
 		void RequestFriendMessageHistory(CSteamID steamIDFriend);
-		[VTableSlot(221)]
+		[VTableSlot(219)]
 		void RequestFriendMessageHistoryForOfflineMessages();
-		[VTableSlot(222)]
+		[VTableSlot(220)]
 		Int32 GetCountFriendsWithOfflineMessages();
-		[VTableSlot(223)]
+		[VTableSlot(221)]
 		UInt32 GetFriendWithOfflineMessage(Int32 iFriend);
-		[VTableSlot(224)]
+		[VTableSlot(222)]
 		void ClearFriendHasOfflineMessage(UInt32 uFriend);
-		[VTableSlot(225)]
+		[VTableSlot(223)]
 		void RequestEmoticonList();
-		[VTableSlot(226)]
+		[VTableSlot(224)]
 		Int32 GetEmoticonCount();
-		[VTableSlot(227)]
+		[VTableSlot(225)]
 		string GetEmoticonName(Int32 iEmoticon);
-		[VTableSlot(228)]
+		[VTableSlot(226)]
 		void ClientLinkFilterInit();
-		[VTableSlot(229)]
+		[VTableSlot(227)]
 		UInt32 LinkDisposition(string arg0);
 	};
 }

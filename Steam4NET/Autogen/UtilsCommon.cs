@@ -143,6 +143,14 @@ namespace Steam4NET
 	};
 	
 	[StructLayout(LayoutKind.Sequential,Pack=8)]
+	[CallbackIdentity(715)]
+	public struct FocusedSteamWindowChanged_t
+	{
+		public const int k_iCallback = 715;
+		public GameID_t m_gameID;
+	};
+	
+	[StructLayout(LayoutKind.Sequential,Pack=8)]
 	[CallbackIdentity(1603)]
 	public struct CellIDChanged_t
 	{

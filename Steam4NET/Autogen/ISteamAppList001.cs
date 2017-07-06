@@ -11,14 +11,14 @@ namespace Steam4NET
 	public interface ISteamAppList001
 	{
 		[VTableSlot(0)]
-		Int32 GetNumInstalledApps();
+		UInt32 GetNumInstalledApps();
 		[VTableSlot(1)]
-		Int32 GetInstalledApps(ref UInt32 puUnk, UInt32 uUnk);
+		UInt32 GetInstalledApps(ref UInt32 apps, UInt32 appsMax);
 		[VTableSlot(2)]
-		Int32 GetAppName(UInt32 uUnk, StringBuilder pUnk, Int32 iUnk);
+		Int32 GetAppName(UInt32 appId, StringBuilder pchAppNameOut, Int32 nameMax);
 		[VTableSlot(3)]
-		Int32 GetAppInstallDir(UInt32 uUnk, StringBuilder pUnk, Int32 iUnk);
+		Int32 GetAppInstallDir(UInt32 appId, StringBuilder pchAppPathOut, Int32 pathMax);
 		[VTableSlot(4)]
-		Int32 GetAppBuildId(UInt32 uUnk);
+		Int32 GetAppBuildId(UInt32 appId);
 	};
 }

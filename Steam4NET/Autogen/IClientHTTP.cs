@@ -46,5 +46,21 @@ namespace Steam4NET
 		bool GetHTTPDownloadProgressPct(UInt32 hRequest, ref float pflPercentOut);
 		[VTableSlot(17)]
 		bool SetHTTPRequestRawPostBody(UInt32 hRequest, string pchContentType, Byte[] pubBody, UInt32 unBodyLen);
+		[VTableSlot(18)]
+		UInt32 CreateCookieContainer(bool arg0);
+		[VTableSlot(19)]
+		bool ReleaseCookieContainer(UInt32 arg0);
+		[VTableSlot(20)]
+		bool SetCookie(UInt32 arg0, string arg1, string arg2, string arg3);
+		[VTableSlot(21)]
+		bool SetHTTPRequestCookieContainer(UInt32 hRequest, UInt32 arg1);
+		[VTableSlot(22)]
+		bool SetHTTPRequestUserAgentInfo(UInt32 hRequest, string arg1);
+		[VTableSlot(23)]
+		bool SetHTTPRequestRequiresVerifiedCertificate(UInt32 hRequest, bool arg1);
+		[VTableSlot(24)]
+		bool SetHTTPRequestAbsoluteTimeoutMS(UInt32 hRequest, UInt32 arg1);
+		[VTableSlot(25)]
+		bool GetHTTPRequestWasTimedOut(UInt32 hRequest, ref bool arg1);
 	};
 }

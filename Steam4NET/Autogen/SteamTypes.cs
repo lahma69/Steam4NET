@@ -114,6 +114,7 @@ namespace Steam4NET
 		k_iSteamHTMLSurfaceCallbacks = 4500,
 		k_iClientVideoCallbacks = 4600,
 		k_iClientInventoryCallbacks = 4700,
+		k_iClientBluetoothManagerCallbacks = 4800,
 	};
 	
 	[StructLayout(LayoutKind.Sequential,Pack=8)]

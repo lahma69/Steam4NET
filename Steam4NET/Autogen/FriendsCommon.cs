@@ -31,8 +31,15 @@ namespace Steam4NET
 		k_EChatEntryTypeTyping = 2,
 		k_EChatEntryTypeInviteGame = 3,
 		k_EChatEntryTypeEmote = 4,
-		k_EChatEntryTypeLobbyGameStart = 5,
 		k_EChatEntryTypeLeftConversation = 6,
+		k_EChatEntryTypeEntered = 7,
+		k_EChatEntryTypeWasKicked = 8,
+		k_EChatEntryTypeWasBanned = 9,
+		k_EChatEntryTypeDisconnected = 10,
+		k_EChatEntryTypeHistoricalChat = 11,
+		k_EChatEntryTypeReserved1 = 12,
+		k_EChatEntryTypeReserved2 = 13,
+		k_EChatEntryTypeLinkBlocked = 14,
 	};
 	
 	public enum EFriendRelationship : int
@@ -409,10 +416,10 @@ namespace Steam4NET
 	{
 		public const int k_iCallback = 347;
 		[MarshalAs(UnmanagedType.I1)]
-		public bool m_bUnk1;
+		public bool m_bSuccess;
 		[MarshalAs(UnmanagedType.I1)]
-		public bool m_bUnk2;
-		public EResult m_eResult;
+		public bool m_bLocalSuccess;
+		public EResult m_result;
 	};
 	
 	[StructLayout(LayoutKind.Sequential,Pack=8)]

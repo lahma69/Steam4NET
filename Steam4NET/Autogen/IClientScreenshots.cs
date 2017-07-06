@@ -45,32 +45,38 @@ namespace Steam4NET
 		[VTableSlot(16)]
 		bool GetLocalScreenshot(CGameID gameID, Int32 iScreenshotIndex, ref UInt32 phScreenshot, ref Int32 piWidth, ref Int32 piHeight, ref UInt32 puTimestamp, ref EUCMFilePrivacyState pePrivacy, ref UInt64 pullFileID, StringBuilder pchCaption, UInt32 cubCaption, ref bool pbSpoiler);
 		[VTableSlot(17)]
-		bool SetLocalScreenshotCaption(CGameID gameID, UInt32 hScreenshot, string cszCaption);
+		bool GetLocalScreenshotByHandle(CGameID gameID, UInt32 hScreenshot, ref Int32 piWidth, ref Int32 piHeight, ref UInt32 puTimestamp, ref EUCMFilePrivacyState pePrivacy, ref UInt64 pullFileID, StringBuilder pchCaption, UInt32 cubCaption, ref bool pbSpoiler);
 		[VTableSlot(18)]
-		bool SetLocalScreenshotPrivacy(CGameID gameID, UInt32 hScreenshot, EUCMFilePrivacyState ePrivacy);
+		bool SetLocalScreenshotCaption(CGameID gameID, UInt32 hScreenshot, string cszCaption);
 		[VTableSlot(19)]
-		bool SetLocalScreenshotSpoiler(CGameID arg0, UInt32 hScreenshot, bool bSpoiler);
+		bool SetLocalScreenshotPrivacy(CGameID gameID, UInt32 hScreenshot, EUCMFilePrivacyState ePrivacy);
 		[VTableSlot(20)]
-		bool StartBatch(CGameID gameID);
+		bool SetLocalScreenshotSpoiler(CGameID arg0, UInt32 hScreenshot, bool bSpoiler);
 		[VTableSlot(21)]
-		bool AddToBatch(UInt32 hScreenshot);
+		bool StartBatch(CGameID gameID);
 		[VTableSlot(22)]
-		UInt64 UploadBatch(EUCMFilePrivacyState ePrivacy);
+		bool AddToBatch(UInt32 hScreenshot);
 		[VTableSlot(23)]
-		UInt64 DeleteBatch(bool bDeleteFromCloud);
+		UInt64 UploadBatch(EUCMFilePrivacyState ePrivacy);
 		[VTableSlot(24)]
-		bool CancelBatch();
+		UInt64 DeleteBatch(bool bDeleteFromCloud);
 		[VTableSlot(25)]
-		void RecoverOldScreenshots();
+		bool CancelBatch();
 		[VTableSlot(26)]
-		UInt32 GetTaggedUserCount(CGameID gameID, UInt32 hScreenshot);
+		void RecoverOldScreenshots();
 		[VTableSlot(27)]
-		CSteamID GetTaggedUser(CGameID gameID, UInt32 hScreenshot, Int32 iUserIndex);
+		UInt32 GetTaggedUserCount(CGameID gameID, UInt32 hScreenshot);
 		[VTableSlot(28)]
-		bool GetLocation(CGameID gameID, UInt32 hScreenshot, StringBuilder pchLocation, UInt32 cubLocation);
+		CSteamID GetTaggedUser(CGameID gameID, UInt32 hScreenshot, Int32 iUserIndex);
 		[VTableSlot(29)]
-		UInt32 GetTaggedPublishedFileCount(CGameID gameID, UInt32 hScreenshot);
+		bool GetLocation(CGameID gameID, UInt32 hScreenshot, StringBuilder pchLocation, UInt32 cubLocation);
 		[VTableSlot(30)]
+		UInt32 GetTaggedPublishedFileCount(CGameID gameID, UInt32 hScreenshot);
+		[VTableSlot(31)]
 		UInt64 GetTaggedPublishedFile(CGameID gameID, UInt32 hScreenshot, Int32 iPublishedFileIndex);
+		[VTableSlot(32)]
+		Int32 GetScreenshotVRType(CGameID gameID, UInt32 uUnk);
+		[VTableSlot(33)]
+		bool BGetUserScreenshotDirectory(StringBuilder pchBuf, UInt32 cubBuf);
 	};
 }

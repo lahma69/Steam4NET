@@ -31,38 +31,72 @@ namespace Steam4NET
 		[VTableSlot(9)]
 		bool BIsShortcutRemoteByIndex(UInt32 uIndex);
 		[VTableSlot(10)]
-		string GetShortcutAppNameByAppID(UInt32 unAppID);
+		bool BIsTemporaryShortcutByIndex(UInt32 uIndex);
 		[VTableSlot(11)]
-		string GetShortcutExeByAppID(UInt32 unAppID);
+		bool BIsOpenVRShortcutByIndex(UInt32 uIndex);
 		[VTableSlot(12)]
-		string GetShortcutStartDirByAppID(UInt32 unAppID);
+		string GetShortcutAppNameByAppID(UInt32 unAppID);
 		[VTableSlot(13)]
-		string GetShortcutIconByAppID(UInt32 unAppID);
+		string GetShortcutExeByAppID(UInt32 unAppID);
 		[VTableSlot(14)]
-		UInt32 GetShortcutUserTagCountByAppID(UInt32 unAppID);
+		string GetShortcutStartDirByAppID(UInt32 unAppID);
 		[VTableSlot(15)]
-		string GetShortcutUserTagByAppID(UInt32 unAppID, UInt32 arg1);
+		string GetShortcutIconByAppID(UInt32 unAppID);
 		[VTableSlot(16)]
-		bool BIsShortcutRemoteByAppID(UInt32 unAppID);
+		string GetShortcutPathByAppID(UInt32 unAppID);
 		[VTableSlot(17)]
-		UInt32 AddShortcut(string arg0, string arg1, string arg2);
+		string GetShortcutCommandLine(UInt32 unAppID);
 		[VTableSlot(18)]
-		void SetShortcutFromFullpath(UInt32 arg0, string arg1);
+		UInt32 GetShortcutUserTagCountByAppID(UInt32 unAppID);
 		[VTableSlot(19)]
-		void SetShortcutAppName(UInt32 arg0, string arg1);
+		string GetShortcutUserTagByAppID(UInt32 unAppID, UInt32 arg1);
 		[VTableSlot(20)]
-		void SetShortcutExe(UInt32 arg0, string arg1);
+		bool BIsShortcutRemoteByAppID(UInt32 unAppID);
 		[VTableSlot(21)]
-		void SetShortcutStartDir(UInt32 arg0, string arg1);
+		bool BIsShortcutHiddenByAppID(UInt32 unAppID);
 		[VTableSlot(22)]
-		void SetShortcutIcon(UInt32 arg0, string arg1);
+		bool BIsTemporaryShortcutByAppID(UInt32 unAppID);
 		[VTableSlot(23)]
-		void ClearShortcutUserTags(UInt32 arg0);
+		bool BIsOpenVRShortcutByAppID(UInt32 unAppID);
 		[VTableSlot(24)]
-		void AddShortcutUserTag(UInt32 arg0, string arg1);
+		bool BAllowDesktopConfigByAppID(UInt32 unAppID);
 		[VTableSlot(25)]
-		void RemoveShortcut(UInt32 arg0);
+		UInt32 GetShortcutLastPlayedTime(UInt32 unAppID);
 		[VTableSlot(26)]
+		UInt32 AddShortcut(string arg0, string arg1, string arg2);
+		[VTableSlot(27)]
+		UInt32 AddTemporaryShortcut(string arg0, string arg1, string arg2);
+		[VTableSlot(28)]
+		UInt32 AddOpenVRShortcut(string arg0, string arg1, string arg2);
+		[VTableSlot(29)]
+		void SetShortcutFromFullpath(UInt32 arg0, string arg1);
+		[VTableSlot(30)]
+		void SetShortcutAppName(UInt32 arg0, string arg1);
+		[VTableSlot(31)]
+		void SetShortcutExe(UInt32 arg0, string arg1);
+		[VTableSlot(32)]
+		void SetShortcutStartDir(UInt32 arg0, string arg1);
+		[VTableSlot(33)]
+		void SetShortcutIcon(UInt32 arg0, string arg1);
+		[VTableSlot(34)]
+		void SetShortcutCommandLine(UInt32 arg0, string arg1);
+		[VTableSlot(35)]
+		void ClearShortcutUserTags(UInt32 arg0);
+		[VTableSlot(36)]
+		void AddShortcutUserTag(UInt32 arg0, string arg1);
+		[VTableSlot(37)]
+		void RemoveShortcutUserTag(UInt32 arg0, string arg1);
+		[VTableSlot(38)]
+		void SetShortcutHidden(UInt32 arg0, bool arg1);
+		[VTableSlot(39)]
+		void SetAllowDesktopConfig(UInt32 arg0, bool arg1);
+		[VTableSlot(40)]
+		void SetOpenVRShortcut(UInt32 arg0, bool arg1);
+		[VTableSlot(41)]
+		void RemoveShortcut(UInt32 arg0);
+		[VTableSlot(42)]
+		void RemoveAllTemporaryShortcuts();
+		[VTableSlot(43)]
 		bool LaunchShortcut(UInt32 arg0);
 	};
 }

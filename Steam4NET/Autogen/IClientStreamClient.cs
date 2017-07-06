@@ -19,12 +19,16 @@ namespace Steam4NET
 		[VTableSlot(3)]
 		void Finished(CGameID gameID, EResult eResult);
 		[VTableSlot(4)]
-		string GetSystemInfo();
+		void SaveStreamingClientConfig(string arg0);
 		[VTableSlot(5)]
-		void StartStreamingSession(CGameID gameID);
+		bool GetFocusInfo(ref CGameID arg0, ref UInt64 arg1);
 		[VTableSlot(6)]
-		void ReportStreamingSessionEvent(CGameID gameID, string arg1);
+		string GetSystemInfo();
 		[VTableSlot(7)]
+		void StartStreamingSession(CGameID gameID);
+		[VTableSlot(8)]
+		void ReportStreamingSessionEvent(CGameID gameID, string arg1);
+		[VTableSlot(9)]
 		void FinishStreamingSession(CGameID gameID, string arg1, string arg2);
 	};
 }

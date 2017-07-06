@@ -7,7 +7,7 @@ using Steam4NET.Attributes;
 namespace Steam4NET
 {
 
-	[InterfaceVersion("STEAMCONTROLLER_INTERFACE_VERSION")]
+	[InterfaceVersion("SteamController001")]
 	public interface ISteamController001
 	{
 		[VTableSlot(0)]

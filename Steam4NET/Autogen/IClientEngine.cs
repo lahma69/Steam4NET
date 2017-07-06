@@ -71,58 +71,72 @@ namespace Steam4NET
 		[VTableSlot(29)]
 		bool HookScreenshots(bool bHook);
 		[VTableSlot(30)]
-		bool IsOverlayEnabled();
+		bool IsScreenshotsHooked();
 		[VTableSlot(31)]
-		bool GetAPICallResult(Int32 hSteamPipe, UInt64 hSteamAPICall, Byte[] pCallback, Int32 cubCallback, Int32 iCallbackExpected, ref bool pbFailed);
+		bool IsOverlayEnabled();
 		[VTableSlot(32)]
-		TClass GetIClientProductBuilder<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
+		bool GetAPICallResult(Int32 hSteamPipe, UInt64 hSteamAPICall, Byte[] pCallback, Int32 cubCallback, Int32 iCallbackExpected, ref bool pbFailed);
 		[VTableSlot(33)]
-		TClass GetIClientDepotBuilder<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
+		TClass GetIClientProductBuilder<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
 		[VTableSlot(34)]
-		TClass GetIClientNetworkDeviceManager<TClass>(Int32 hSteamPipe) where TClass : class;
+		TClass GetIClientDepotBuilder<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
 		[VTableSlot(35)]
-		void ConCommandInit(ref IntPtr pAccessor);
+		TClass GetIClientNetworkDeviceManager<TClass>(Int32 hSteamPipe) where TClass : class;
 		[VTableSlot(36)]
-		TClass GetIClientAppManager<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
+		void ConCommandInit(ref IntPtr pAccessor);
 		[VTableSlot(37)]
-		TClass GetIClientConfigStore<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
+		TClass GetIClientAppManager<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
 		[VTableSlot(38)]
-		bool BOverlayNeedsPresent();
+		TClass GetIClientConfigStore<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
 		[VTableSlot(39)]
-		TClass GetIClientGameStats<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
+		bool BOverlayNeedsPresent();
 		[VTableSlot(40)]
-		TClass GetIClientHTTP<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
+		TClass GetIClientGameStats<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
 		[VTableSlot(41)]
-		bool BShutdownIfAllPipesClosed();
+		TClass GetIClientHTTP<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
 		[VTableSlot(42)]
-		TClass GetIClientAudio<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
+		bool BShutdownIfAllPipesClosed();
 		[VTableSlot(43)]
-		TClass GetIClientMusic<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
+		TClass GetIClientAudio<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
 		[VTableSlot(44)]
-		TClass GetIClientUnifiedMessages<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
+		TClass GetIClientMusic<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
 		[VTableSlot(45)]
-		TClass GetIClientController<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
+		TClass GetIClientUnifiedMessages<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
 		[VTableSlot(46)]
-		TClass GetIClientParentalSettings<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
+		TClass GetIClientController<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
 		[VTableSlot(47)]
-		TClass GetIClientStreamLauncher<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
+		TClass GetIClientParentalSettings<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
 		[VTableSlot(48)]
-		TClass GetIClientDeviceAuth<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
+		TClass GetIClientStreamLauncher<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
 		[VTableSlot(49)]
-		TClass GetIClientRemoteClientManager<TClass>(Int32 hSteamPipe) where TClass : class;
+		TClass GetIClientDeviceAuth<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
 		[VTableSlot(50)]
-		TClass GetIClientStreamClient<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
+		TClass GetIClientRemoteClientManager<TClass>(Int32 hSteamPipe) where TClass : class;
 		[VTableSlot(51)]
-		TClass GetIClientShortcuts<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
+		TClass GetIClientStreamClient<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
 		[VTableSlot(52)]
-		TClass GetIClientRemoteControlManager<TClass>(Int32 hSteamPipe) where TClass : class;
+		TClass GetIClientShortcuts<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
 		[VTableSlot(53)]
-		Int32 Set_ClientAPI_CPostAPIResultInProcess(ref IntPtr arg0);
-		[VTableSlot(54)]
-		Int32 Remove_ClientAPI_CPostAPIResultInProcess(ref IntPtr arg0);
-		[VTableSlot(55)]
 		TClass GetIClientUGC<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
+		[VTableSlot(54)]
+		TClass GetIClientInventory<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
+		[VTableSlot(55)]
+		TClass GetIClientVR<TClass>(Int32 arg0) where TClass : class;
 		[VTableSlot(56)]
-		TClass GetIClientVR<TClass>() where TClass : class;
+		TClass GetIClientGameNotifications<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
+		[VTableSlot(57)]
+		TClass GetIClientHTMLSurface<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
+		[VTableSlot(58)]
+		TClass GetIClientVideo<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
+		[VTableSlot(59)]
+		TClass GetIClientControllerSerialized<TClass>(Int32 arg0) where TClass : class;
+		[VTableSlot(60)]
+		TClass GetIClientAppDisableUpdate<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
+		[VTableSlot(61)]
+		Int32 Set_ClientAPI_CPostAPIResultInProcess(ref IntPtr arg0);
+		[VTableSlot(62)]
+		TClass GetIClientBluetoothManager<TClass>(Int32 hSteamPipe) where TClass : class;
+		[VTableSlot(63)]
+		TClass GetIClientSharedConnection<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
 	};
 }

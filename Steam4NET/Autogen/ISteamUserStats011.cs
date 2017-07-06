@@ -39,7 +39,7 @@ namespace Steam4NET
 		[VTableSlot(13)]
 		bool IndicateAchievementProgress(string pchName, UInt32 nCurProgress, UInt32 nMaxProgress);
 		[VTableSlot(14)]
-		UInt32 GetNumAchievements(CGameID nGameID);
+		UInt32 GetNumAchievements();
 		[VTableSlot(15)]
 		string GetAchievementName(UInt32 iAchievement);
 		[VTableSlot(16)]
