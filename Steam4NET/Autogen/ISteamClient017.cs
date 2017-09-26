@@ -82,5 +82,7 @@ namespace Steam4NET
 		TClass GetISteamInventory<TClass>(Int32 hSteamuser, Int32 hSteamPipe) where TClass : class;
 		[VTableSlot(35)]
 		TClass GetISteamVideo<TClass>(Int32 hSteamuser, Int32 hSteamPipe) where TClass : class;
+		[VTableSlot(36)]
+		TClass GetISteamParentalSettings<TClass>(Int32 hSteamuser, Int32 hSteamPipe) where TClass : class;
 	};
 }

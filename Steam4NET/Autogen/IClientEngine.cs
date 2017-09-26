@@ -138,5 +138,7 @@ namespace Steam4NET
 		TClass GetIClientBluetoothManager<TClass>(Int32 hSteamPipe) where TClass : class;
 		[VTableSlot(63)]
 		TClass GetIClientSharedConnection<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
+		[VTableSlot(64)]
+		TClass GetIClientShader<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
 	};
 }

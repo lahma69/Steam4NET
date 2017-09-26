@@ -7,6 +7,7 @@ using Steam4NET.Attributes;
 namespace Steam4NET
 {
 
+	[InterfaceVersion("STEAMVIDEO_INTERFACE_V002")]
 	public interface ISteamVideo002
 	{
 		[VTableSlot(0)]
@@ -14,8 +15,8 @@ namespace Steam4NET
 		[VTableSlot(1)]
 		bool IsBroadcasting(ref Int32 pnNumViewers);
 		[VTableSlot(2)]
-		Int32 GetOPFSettings(UInt32 arg0);
+		void GetOPFSettings(UInt32 unVideoAppID);
 		[VTableSlot(3)]
-		Int32 GetOPFStringForApp(UInt32 arg0, StringBuilder arg1, ref Int32 arg2);
+		bool GetOPFStringForApp(UInt32 unVideoAppID, StringBuilder pchBuffer, ref Int32 pnBufferSize);
 	};
 }

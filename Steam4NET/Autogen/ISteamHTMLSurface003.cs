@@ -70,12 +70,16 @@ namespace Steam4NET
 		[VTableSlot(29)]
 		void GetLinkAtPosition(UInt32 hBrowser, Int32 x, Int32 y);
 		[VTableSlot(30)]
-		void SetBackgroundMode(UInt32 hBrowser, bool backgroundMode);
+		void SetCookie(string pchHostname, string pchKey, string pchValue, string pchPath, UInt32 nExpires, bool bSecure, bool bHTTPOnly);
 		[VTableSlot(31)]
-		void AllowStartRequest(UInt32 hBrowser, bool allowed);
+		void SetPageScaleFactor(UInt32 unBrowserHandle, float flZoom, Int32 nPointX, Int32 nPointY);
 		[VTableSlot(32)]
-		void JSDialogResponse(UInt32 hBrowser, bool result);
+		void SetBackgroundMode(UInt32 hBrowser, bool backgroundMode);
 		[VTableSlot(33)]
+		void AllowStartRequest(UInt32 hBrowser, bool allowed);
+		[VTableSlot(34)]
+		void JSDialogResponse(UInt32 hBrowser, bool result);
+		[VTableSlot(35)]
 		void FileLoadDialogResponse(UInt32 hBrowser, string selectedFiles);
 	};
 }

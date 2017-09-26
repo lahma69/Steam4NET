@@ -21,15 +21,15 @@ namespace Steam4NET
 		[VTableSlot(4)]
 		UInt32 GetDeviceAuthorizations(ref UInt64 arg0, UInt32 arg1, bool arg2);
 		[VTableSlot(5)]
-		bool GetDeviceAuthorizationInfo(UInt64 arg0, ref UInt32 arg1, ref UInt32 arg2, ref bool arg3, StringBuilder arg4, Int32 arg5, StringBuilder arg6, Int32 arg7, StringBuilder arg8, Int32 arg9, ref UInt32 arg10);
+		bool GetDeviceAuthorizationInfo(UInt64 arg0, ref UInt32 arg1, ref UInt32 arg2, ref UInt32 arg3, ref bool arg4, StringBuilder arg5, Int32 arg6, StringBuilder arg7, Int32 arg8, StringBuilder arg9, Int32 arg10, ref UInt32 arg11);
 		[VTableSlot(6)]
-		UInt32 GetAuthorizedBorrowsers(ref UInt32 arg0, UInt32 arg1);
+		UInt32 GetAuthorizedBorrowers(ref UInt32 arg0, UInt32 arg1);
 		[VTableSlot(7)]
 		UInt32 GetLocalUsers(ref UInt32 arg0, UInt32 arg1);
 		[VTableSlot(8)]
-		bool GetBorrowserInfo(UInt32 arg0, StringBuilder arg1, Int32 arg2, ref bool arg3);
+		bool GetBorrowerInfo(UInt32 arg0, StringBuilder arg1, Int32 arg2, ref bool arg3);
 		[VTableSlot(9)]
-		UInt64 UpateAuthorizedBorrowers(ref UInt32 arg0, UInt32 arg1, bool arg2);
+		UInt64 UpdateAuthorizedBorrowers(ref UInt32 arg0, UInt32 arg1, bool arg2);
 		[VTableSlot(10)]
 		UInt32 GetSharedLibraryLockedBy(UInt32 uUnk);
 		[VTableSlot(11)]

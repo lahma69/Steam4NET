@@ -14,7 +14,7 @@ namespace Steam4NET
 		[VTableSlot(1)]
 		bool GetResultItems(Int32 resultHandle, ref SteamItemDetails_t pOutItemsArray, ref UInt32 punOutItemsArraySize);
 		[VTableSlot(2)]
-		Int32 GetResultItemProperty(Int32 arg0, UInt32 arg1, string arg2, StringBuilder arg3, ref UInt32 arg4);
+		bool GetResultItemProperty(Int32 resultHandle, UInt32 unItemIndex, string pchPropertyName, StringBuilder pchValueBuffer, ref UInt32 punValueBufferSizeOut);
 		[VTableSlot(3)]
 		UInt32 GetResultTimestamp(Int32 resultHandle);
 		[VTableSlot(4)]
@@ -56,8 +56,8 @@ namespace Steam4NET
 		[VTableSlot(22)]
 		bool GetItemDefinitionProperty(Int32 iDefinition, string pchPropertyName, StringBuilder pchValueBuffer, ref UInt32 punValueBufferSize);
 		[VTableSlot(23)]
-		UInt64 RequestEligiblePromoItemDefinitionsIDs(CSteamID arg0);
+		UInt64 RequestEligiblePromoItemDefinitionsIDs(CSteamID steamID);
 		[VTableSlot(24)]
-		bool GetEligiblePromoItemDefinitionIDs(CSteamID arg0, ref Int32 arg1, ref UInt32 arg2);
+		bool GetEligiblePromoItemDefinitionIDs(CSteamID steamID, ref Int32 pItemDefIDs, ref UInt32 punItemDefIDsArraySize);
 	};
 }

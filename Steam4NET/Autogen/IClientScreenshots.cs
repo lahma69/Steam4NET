@@ -17,7 +17,7 @@ namespace Steam4NET
 		[VTableSlot(2)]
 		UInt32 WriteScreenshot(CGameID gameID, Byte[] pubRGBData, UInt32 uRGBDataSize, Int32 iWidth, Int32 iHeight);
 		[VTableSlot(3)]
-		UInt32 AddScreenshotToLibrary(CGameID gameID, string cszScreenshotPath, string cszThumbnailPath, Int32 iWidth, Int32 iHeight);
+		UInt32 AddScreenshotToLibrary(CGameID gameID, EVRScreenshotType eVRKind, string cszScreenshotPath, string cszThumbnailPath, string pchUnk, Int32 iWidth, Int32 iHeight);
 		[VTableSlot(4)]
 		void TriggerScreenshot(CGameID gameID);
 		[VTableSlot(5)]

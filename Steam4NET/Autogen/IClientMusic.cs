@@ -7,10 +7,6 @@ using Steam4NET.Attributes;
 namespace Steam4NET
 {
 
-	public enum MediaController_Status : int
-	{
-	};
-	
 	[InterfaceVersion("CLIENTMUSIC_INTERFACE_VERSION001")]
 	public interface IClientMusic
 	{
@@ -29,104 +25,288 @@ namespace Steam4NET
 		[VTableSlot(6)]
 		bool GetQueueEntryURI(Int32 iIndex, StringBuilder arg1, Int32 arg2);
 		[VTableSlot(7)]
-		bool GetQueueEntryData(Int32 iIndex, StringBuilder arg1, Int32 arg2, StringBuilder arg3, Int32 arg4, StringBuilder arg5, Int32 arg6);
+		bool GetQueueEntryData(Int32 iIndex, StringBuilder arg1, Int32 arg2, StringBuilder arg3, Int32 arg4, StringBuilder arg5, Int32 arg6, ref Int32 arg7, ref ETrackQueueOrigin arg8, ref Int32 arg9);
 		[VTableSlot(8)]
-		void EmptyQueue();
+		bool GetQueueEntryOrigin(Int32 arg0, ref ETrackQueueOrigin arg1, ref Int32 arg2);
 		[VTableSlot(9)]
-		void RemoveQueueEntry(Int32 iIndex, bool bUnk);
+		void EmptyQueue();
 		[VTableSlot(10)]
-		void AddAlbumToQueue(string arg0, bool arg1, bool arg2);
+		void RemoveQueueEntry(Int32 iIndex, bool bUnk);
 		[VTableSlot(11)]
-		void AddTrackToQueue(string arg0, bool arg1, bool arg2, bool arg3);
+		void AddArtistToQueue(string arg0, bool arg1, bool arg2);
 		[VTableSlot(12)]
-		AudioPlayback_Status GetPlaybackStatus();
+		void AddTracksOfAlbumIDToQueue(Int32 arg0, Int32 arg1, bool arg2, string arg3, bool arg4, bool arg5, bool arg6);
 		[VTableSlot(13)]
-		void SetPlayingLooped(bool bPlayingLooped);
+		void AddAllTracksOfAlbumIDToQueue(Int32 arg0, Int32 arg1, bool arg2, bool arg3, bool arg4);
 		[VTableSlot(14)]
-		bool IsPlayingLooped();
+		void AddTracksOfPlaylistIDToQueue(Int32 arg0, Int32 arg1, bool arg2, bool arg3, bool arg4, bool arg5);
 		[VTableSlot(15)]
-		void SetPlayingShuffled(bool bPlayingShuffled);
+		void SetSuppressAutoTrackAdvance(bool arg0);
 		[VTableSlot(16)]
-		bool IsPlayingShuffled();
+		AudioPlayback_Status GetPlaybackStatus();
 		[VTableSlot(17)]
-		void Play();
+		void SetPlayingRepeatStatus(PlayingRepeat_Status arg0);
 		[VTableSlot(18)]
-		void Pause();
+		PlayingRepeat_Status GetPlayingRepeatStatus();
 		[VTableSlot(19)]
-		void Stop();
+		PlayingRepeat_Status TogglePlayingRepeatStatus();
 		[VTableSlot(20)]
-		void PlayPrevious();
+		void SetPlayingShuffled(bool bPlayingShuffled);
 		[VTableSlot(21)]
-		void PlayEntry(Int32 arg0);
+		bool IsPlayingShuffled();
 		[VTableSlot(22)]
-		void SetVolume(float flVolume);
+		void Play();
 		[VTableSlot(23)]
-		float GetVolume();
+		void Pause();
 		[VTableSlot(24)]
-		void ResetLocalLibrary();
+		void PlayPrevious();
 		[VTableSlot(25)]
-		MediaController_Status GetStatusLocalLibrary();
+		void PlayNext();
 		[VTableSlot(26)]
-		void SaveLocalLibraryDirectorySettings();
+		void PlayEntry(Int32 arg0);
 		[VTableSlot(27)]
-		Int32 GetLocalLibraryDirectoryEntryCount();
+		void TogglePlayPause();
 		[VTableSlot(28)]
-		bool GetLocalLibraryDirectoryEntry(Int32 arg0, StringBuilder arg1, Int32 arg2);
+		void SetVolume(float flVolume);
 		[VTableSlot(29)]
-		void AddLocalLibraryDirectoryEntry(string arg0);
+		float GetVolume();
 		[VTableSlot(30)]
-		void ResetLocalLibraryDirectories(bool arg0);
+		void ToggleMuteVolume();
 		[VTableSlot(31)]
-		bool GetDefaultLocalLibraryDirectory(StringBuilder arg0, Int32 arg1);
+		void IncreaseVolume();
 		[VTableSlot(32)]
-		void LocalLibraryStopCrawling();
+		void DecreaseVolume();
 		[VTableSlot(33)]
-		void UpdateLocalLibraryDirectoriesToCrawl();
+		void SetPlaybackPosition(Int32 arg0);
 		[VTableSlot(34)]
-		bool BLocalLibraryIsCrawling();
+		Int32 GetPlaybackPosition();
 		[VTableSlot(35)]
-		void CrawlAlbum(string arg0);
+		Int32 GetPlaybackDuration();
 		[VTableSlot(36)]
-		void CrawlTrack(string arg0);
+		void LocalLibraryCrawlTrack(string arg0);
 		[VTableSlot(37)]
-		Int32 GetLocalLibraryAlbumCount();
+		void ResetLocalLibrary();
 		[VTableSlot(38)]
-		bool GetLocalLibraryAlbumKey(Int32 arg0, StringBuilder arg1, Int32 arg2);
+		MediaController_Status GetStatusLocalLibrary();
 		[VTableSlot(39)]
-		bool GetLocalLibraryAlbumEntry(string arg0, StringBuilder arg1, Int32 arg2, StringBuilder arg3, Int32 arg4, ref Int32 arg5, ref bool arg6);
+		void SaveLocalLibraryDirectorySettings();
 		[VTableSlot(40)]
-		bool GetLocalLibraryAlbumTrackEntry(string arg0, Int32 arg1, StringBuilder arg2, Int32 arg3, ref Int32 arg4, StringBuilder arg5, Int32 arg6);
+		Int32 GetLocalLibraryDirectoryEntryCount();
 		[VTableSlot(41)]
-		Int32 GetLocalLibraryTrackCount();
+		bool GetLocalLibraryDirectoryEntry(Int32 arg0, StringBuilder arg1, Int32 arg2);
 		[VTableSlot(42)]
-		bool GetLocalLibraryAlbumTrackKey(string arg0, Int32 arg1, StringBuilder arg2, Int32 arg3);
+		void AddLocalLibraryDirectoryEntry(string arg0);
 		[VTableSlot(43)]
-		Int32 GetLocalLibraryTrackCountForAlbum(string arg0);
+		void ResetLocalLibraryDirectories(bool arg0);
 		[VTableSlot(44)]
-		Int32 GetLocalLibraryArtistCount();
+		bool GetDefaultLocalLibraryDirectory(StringBuilder arg0, Int32 arg1);
 		[VTableSlot(45)]
-		bool GetLocalLibraryArtistName(Int32 arg0, StringBuilder arg1, Int32 arg2);
+		void LocalLibraryStopCrawling();
 		[VTableSlot(46)]
-		Int32 GetLocalLibraryAlbumCountForArtistName(string arg0);
+		void UpdateLocalLibraryDirectoriesToCrawl();
 		[VTableSlot(47)]
-		bool GetLocalLibraryArtistAlbumKey(string arg0, Int32 arg1, StringBuilder arg2, Int32 arg3);
+		bool BLocalLibraryIsCrawling();
 		[VTableSlot(48)]
-		void StartUsingSpotify();
+		Int32 GetLocalLibraryTrackCount();
 		[VTableSlot(49)]
-		void StopUsingSpotify();
+		Int32 GetLocalLibraryAlbumCount();
 		[VTableSlot(50)]
-		MediaController_Status GetStatusSpotify();
+		Int32 GetLocalLibraryAlbumID(Int32 arg0, bool arg1);
 		[VTableSlot(51)]
-		void LoginSpotify(string arg0, string arg1);
+		bool GetLocalLibraryAlbumIDEntry(Int32 arg0, StringBuilder arg1, Int32 arg2, StringBuilder arg3, Int32 arg4, ref Int32 arg5, ref Int32 arg6, ref bool arg7);
 		[VTableSlot(52)]
-		void ReloginSpotify();
+		Int32 GetLocalLibraryAlbumIDTrackEntry(Int32 arg0, Int32 arg1, StringBuilder arg2, Int32 arg3, ref Int32 arg4, StringBuilder arg5, Int32 arg6, StringBuilder arg7, Int32 arg8);
 		[VTableSlot(53)]
-		string GetCurrentUserSpotify();
+		bool GetLocalLibraryAlbumDirectoryForAlbumID(Int32 arg0, StringBuilder arg1, Int32 arg2);
 		[VTableSlot(54)]
-		void ForgetCurrentUserSpotify();
+		bool GetLocalLibraryAlbumSortNameForAlbumID(Int32 arg0, StringBuilder arg1, Int32 arg2);
 		[VTableSlot(55)]
-		void LogoutSpotify();
+		bool GetLocalLibraryArtistSortNameForAlbumID(Int32 arg0, StringBuilder arg1, Int32 arg2);
 		[VTableSlot(56)]
+		Int32 GetLocalLibraryTrackCountForAlbumID(Int32 arg0);
+		[VTableSlot(57)]
+		bool GetLocalLibraryAlbumIDTrackKey(Int32 arg0, Int32 arg1, StringBuilder arg2, Int32 arg3);
+		[VTableSlot(58)]
+		Int32 GetLocalLibraryAlbumIDForTrackKey(string arg0);
+		[VTableSlot(59)]
+		Int32 GetLocalLibraryArtistCount();
+		[VTableSlot(60)]
+		bool GetLocalLibraryArtistName(Int32 arg0, StringBuilder arg1, Int32 arg2, StringBuilder arg3, Int32 arg4);
+		[VTableSlot(61)]
+		Int32 GetLocalLibraryAlbumCountForArtistName(string arg0);
+		[VTableSlot(62)]
+		bool GetLocalLibraryTrackAndAlbumCountOfArtistName(string arg0, ref Int32 arg1, ref Int32 arg2);
+		[VTableSlot(63)]
+		Int32 GetLocalLibraryAlbumIDForArtist(string arg0, Int32 arg1);
+		[VTableSlot(64)]
+		Int32 GetLocalLibraryRepresentativeAlbumIDForArtist(string arg0, ref bool arg1);
+		[VTableSlot(65)]
+		bool GetLocalLibraryTrackEntry(string arg0, StringBuilder arg1, Int32 arg2, ref Int32 arg3, StringBuilder arg4, Int32 arg5);
+		[VTableSlot(66)]
+		bool BRequestAllArtistListData(Int32 arg0);
+		[VTableSlot(67)]
+		bool BRequestAllAlbumListData(Int32 arg0);
+		[VTableSlot(68)]
+		bool BRequestAllTracksListDataForAlbumID(Int32 arg0, Int32 arg1);
+		[VTableSlot(69)]
+		Int32 GetPlaylistCount();
+		[VTableSlot(70)]
+		Int32 GetPlaylistID(Int32 arg0);
+		[VTableSlot(71)]
+		Int32 GetPositionForPlaylistID(Int32 arg0);
+		[VTableSlot(72)]
+		Int32 GetPlaylistIDForPosition(Int32 arg0);
+		[VTableSlot(73)]
+		bool BRequestAllPlayListData(Int32 arg0);
+		[VTableSlot(74)]
+		bool GetNextPlaylistName(string arg0, StringBuilder arg1, Int32 arg2);
+		[VTableSlot(75)]
+		bool InsertPlaylistWithNameAtPosition(string arg0, Int32 arg1);
+		[VTableSlot(76)]
+		bool MovePlaylistFromPositionToPosition(Int32 arg0, Int32 arg1);
+		[VTableSlot(77)]
+		bool DeletePlaylistWithID(Int32 arg0);
+		[VTableSlot(78)]
+		bool RenamePlaylistWithID(Int32 arg0, string arg1);
+		[VTableSlot(79)]
+		bool AddRandomTracksToPlaylistID(Int32 arg0, Int32 arg1);
+		[VTableSlot(80)]
+		bool GetPlaylistIDData(Int32 arg0, StringBuilder arg1, Int32 arg2, ref Int32 arg3, ref Int32 arg4, ref Int32 arg5, ref Int32 arg6, ref Int32 arg7);
+		[VTableSlot(81)]
+		Int32 GetPlaylistIDTrackCount(Int32 arg0);
+		[VTableSlot(82)]
+		bool BRequestAllTracksListDataForPlaylistID(Int32 arg0, Int32 arg1);
+		[VTableSlot(83)]
+		bool GetPlaylistIDTrackKey(Int32 arg0, Int32 arg1, StringBuilder arg2, Int32 arg3, ref Int32 arg4);
+		[VTableSlot(84)]
+		Int32 GetPositionForPlaylistItemID(Int32 arg0);
+		[VTableSlot(85)]
+		bool AddTrackKeyToPlaylistID(Int32 arg0, string arg1);
+		[VTableSlot(86)]
+		bool AddAlbumIDToPlaylistID(Int32 arg0, Int32 arg1, string arg2);
+		[VTableSlot(87)]
+		bool AddArtistNameToPlaylistID(Int32 arg0, string arg1);
+		[VTableSlot(88)]
+		bool AddPlaylistIDToPlaylistID(Int32 arg0, Int32 arg1);
+		[VTableSlot(89)]
+		bool RemovePlaylistPositionFromPlaylistID(Int32 arg0, Int32 arg1);
+		[VTableSlot(90)]
+		bool RemoveAllTracksFromPlaylistID(Int32 arg0, bool arg1);
+		[VTableSlot(91)]
+		bool MoveTrackFromPositionToPositonInPlaylistID(Int32 arg0, Int32 arg1, Int32 arg2);
+		[VTableSlot(92)]
+		bool AppendQueueToPlaylistID(Int32 arg0, bool arg1);
+		[VTableSlot(93)]
+		Int32 GetLocalLibraryRepresentativeAlbumIDForPlaylist(Int32 arg0, ref bool arg1);
+		[VTableSlot(94)]
+		bool MarkTrackKeyAsPlayed(string arg0);
+		[VTableSlot(95)]
+		bool GetMostRecentlyPlayedAlbums(Int32 arg0, ref Int32 arg1);
+		[VTableSlot(96)]
+		bool GetMostRecentlyAddedAlbums(Int32 arg0, ref Int32 arg1);
+		[VTableSlot(97)]
+		bool ActivateRemotePlayerWithID(Int32 arg0);
+		[VTableSlot(98)]
+		Int32 GetActiveRemotePlayerID();
+		[VTableSlot(99)]
+		Int32 GetRemotePlayerCount();
+		[VTableSlot(100)]
+		bool GetRemotePlayerIDAndName(Int32 arg0, ref Int32 arg1, StringBuilder arg2, Int32 arg3);
+		[VTableSlot(101)]
+		bool GetCurrentEntryTextForRemotePlayerWithID(Int32 arg0, StringBuilder arg1, Int32 arg2);
+		[VTableSlot(102)]
+		bool RegisterSteamMusicRemote(string arg0);
+		[VTableSlot(103)]
+		bool DeregisterSteamMusicRemote();
+		[VTableSlot(104)]
+		bool BIsCurrentMusicRemote();
+		[VTableSlot(105)]
+		bool BActivationSuccess(bool arg0);
+		[VTableSlot(106)]
+		bool SetDisplayName(string arg0);
+		[VTableSlot(107)]
+		bool SetPNGIcon_64x64(Byte[] arg0, UInt32 arg1);
+		[VTableSlot(108)]
+		bool EnablePlayPrevious(bool arg0);
+		[VTableSlot(109)]
+		bool EnablePlayNext(bool arg0);
+		[VTableSlot(110)]
+		bool EnableShuffled(bool arg0);
+		[VTableSlot(111)]
+		bool EnableLooped(bool arg0);
+		[VTableSlot(112)]
+		bool EnableQueue(bool arg0);
+		[VTableSlot(113)]
+		bool EnablePlaylists(bool arg0);
+		[VTableSlot(114)]
+		bool UpdatePlaybackStatus(AudioPlayback_Status arg0);
+		[VTableSlot(115)]
+		bool UpdateShuffled(bool arg0);
+		[VTableSlot(116)]
+		bool UpdateLooped(bool arg0);
+		[VTableSlot(117)]
+		bool UpdateVolume(float arg0);
+		[VTableSlot(118)]
+		bool CurrentEntryWillChange();
+		[VTableSlot(119)]
+		bool CurrentEntryIsAvailable(bool arg0);
+		[VTableSlot(120)]
+		bool UpdateCurrentEntryText(string arg0);
+		[VTableSlot(121)]
+		bool UpdateCurrentEntryElapsedSeconds(Int32 arg0);
+		[VTableSlot(122)]
+		bool UpdateCurrentEntryCoverArt(Byte[] arg0, UInt32 arg1);
+		[VTableSlot(123)]
+		bool CurrentEntryDidChange();
+		[VTableSlot(124)]
+		bool QueueWillChange();
+		[VTableSlot(125)]
+		bool ResetQueueEntries();
+		[VTableSlot(126)]
+		bool SetQueueEntry(Int32 arg0, Int32 arg1, string arg2);
+		[VTableSlot(127)]
+		bool SetCurrentQueueEntry(Int32 arg0);
+		[VTableSlot(128)]
+		bool QueueDidChange();
+		[VTableSlot(129)]
+		bool PlaylistWillChange();
+		[VTableSlot(130)]
+		bool ResetPlaylistEntries();
+		[VTableSlot(131)]
+		bool SetPlaylistEntry(Int32 arg0, Int32 arg1, string arg2);
+		[VTableSlot(132)]
+		bool SetCurrentPlaylistEntry(Int32 arg0);
+		[VTableSlot(133)]
+		bool PlaylistDidChange();
+		[VTableSlot(134)]
+		Int32 RequestAlbumCoverForAlbumID(Int32 arg0);
+		[VTableSlot(135)]
+		Int32 RequestAlbumCoverForTrackKey(string arg0);
+		[VTableSlot(136)]
+		bool GetAlbumCoverForIndex(Int32 arg0, Byte[] arg1, UInt32 arg2);
+		[VTableSlot(137)]
+		void CancelAlbumCoverRequestForIndex(Int32 arg0);
+		[VTableSlot(138)]
+		bool GetAlbumCoverURLForAlbumID(Int32 arg0, StringBuilder arg1, UInt32 arg2);
+		[VTableSlot(139)]
+		bool GetAlbumCoverURLForTrackKey(string arg0, StringBuilder arg1, UInt32 arg2);
+		[VTableSlot(140)]
+		void StartUsingSpotify();
+		[VTableSlot(141)]
+		void StopUsingSpotify();
+		[VTableSlot(142)]
+		MediaController_Status GetStatusSpotify();
+		[VTableSlot(143)]
+		void LoginSpotify(string arg0, string arg1);
+		[VTableSlot(144)]
+		void ReloginSpotify();
+		[VTableSlot(145)]
+		string GetCurrentUserSpotify();
+		[VTableSlot(146)]
+		void ForgetCurrentUserSpotify();
+		[VTableSlot(147)]
+		void LogoutSpotify();
+		[VTableSlot(148)]
 		void DumpStatusToConsole();
 	};
 }

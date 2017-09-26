@@ -15,4 +15,132 @@ namespace Steam4NET
 		AudioPlayback_Idle = 3,
 	};
 	
+	public enum PlayingRepeat_Status : int
+	{
+		PlayingRepeat_None = 0,
+		PlayingRepeat_Repeat = 1,
+		PlayingRepeat_RepeatOnce = 2,
+	};
+	
+	public enum MediaController_Status : int
+	{
+	};
+	
+	public enum ETrackQueueOrigin : int
+	{
+	};
+	
+	[StructLayout(LayoutKind.Sequential,Pack=8)]
+	[CallbackIdentity(4001)]
+	public struct PlaybackStatusHasChanged_t
+	{
+		public const int k_iCallback = 4001;
+	};
+	
+	[StructLayout(LayoutKind.Sequential,Pack=8)]
+	[CallbackIdentity(4002)]
+	public struct VolumeHasChanged_t
+	{
+		public const int k_iCallback = 4002;
+		public float m_flNewVolume;
+	};
+	
+	[StructLayout(LayoutKind.Sequential,Pack=8)]
+	[CallbackIdentity(4101)]
+	public struct MusicPlayerRemoteWillActivate_t
+	{
+		public const int k_iCallback = 4101;
+	};
+	
+	[StructLayout(LayoutKind.Sequential,Pack=8)]
+	[CallbackIdentity(4102)]
+	public struct MusicPlayerRemoteWillDeactivate_t
+	{
+		public const int k_iCallback = 4102;
+	};
+	
+	[StructLayout(LayoutKind.Sequential,Pack=8)]
+	[CallbackIdentity(4103)]
+	public struct MusicPlayerRemoteToFront_t
+	{
+		public const int k_iCallback = 4103;
+	};
+	
+	[StructLayout(LayoutKind.Sequential,Pack=8)]
+	[CallbackIdentity(4104)]
+	public struct MusicPlayerWillQuit_t
+	{
+		public const int k_iCallback = 4104;
+	};
+	
+	[StructLayout(LayoutKind.Sequential,Pack=8)]
+	[CallbackIdentity(4105)]
+	public struct MusicPlayerWantsPlay_t
+	{
+		public const int k_iCallback = 4105;
+	};
+	
+	[StructLayout(LayoutKind.Sequential,Pack=8)]
+	[CallbackIdentity(4106)]
+	public struct MusicPlayerWantsPause_t
+	{
+		public const int k_iCallback = 4106;
+	};
+	
+	[StructLayout(LayoutKind.Sequential,Pack=8)]
+	[CallbackIdentity(4107)]
+	public struct MusicPlayerWantsPlayPrevious_t
+	{
+		public const int k_iCallback = 4107;
+	};
+	
+	[StructLayout(LayoutKind.Sequential,Pack=8)]
+	[CallbackIdentity(4108)]
+	public struct MusicPlayerWantsPlayNext_t
+	{
+		public const int k_iCallback = 4108;
+	};
+	
+	[StructLayout(LayoutKind.Sequential,Pack=8)]
+	[CallbackIdentity(4109)]
+	public struct MusicPlayerWantsShuffled_t
+	{
+		public const int k_iCallback = 4109;
+		[MarshalAs(UnmanagedType.I1)]
+		public bool m_bShuffled;
+	};
+	
+	[StructLayout(LayoutKind.Sequential,Pack=8)]
+	[CallbackIdentity(4110)]
+	public struct MusicPlayerWantsLooped_t
+	{
+		public const int k_iCallback = 4110;
+		[MarshalAs(UnmanagedType.I1)]
+		public bool m_bLooped;
+	};
+	
+	[StructLayout(LayoutKind.Sequential,Pack=8)]
+	[CallbackIdentity(4011)]
+	public struct MusicPlayerWantsVolume_t
+	{
+		public const int k_iCallback = 4011;
+		public float m_flNewVolume;
+	};
+	
+	[StructLayout(LayoutKind.Sequential,Pack=8)]
+	[CallbackIdentity(4012)]
+	public struct MusicPlayerSelectsQueueEntry_t
+	{
+		public const int k_iCallback = 4012;
+		public Int32 nID;
+	};
+	
+	[StructLayout(LayoutKind.Sequential,Pack=8)]
+	[CallbackIdentity(4013)]
+	public struct MusicPlayerSelectsPlaylistEntry_t
+	{
+		public const int k_iCallback = 4013;
+		public Int32 nID;
+	};
+	
 }

@@ -29,7 +29,7 @@ namespace Steam4NET
 		[VTableSlot(8)]
 		EResult AddRowAttributeInt(UInt64 ulRowID, string pstrName, Int32 iData);
 		[VTableSlot(9)]
-		EResult AddRowAtributeString(UInt64 ulRowID, string pstrName, string pstrData);
+		EResult AddRowAttributeString(UInt64 ulRowID, string pstrName, string pstrData);
 		[VTableSlot(10)]
 		EResult AddRowAttributeFloat(UInt64 ulRowID, string pstrName, float fData);
 		[VTableSlot(11)]

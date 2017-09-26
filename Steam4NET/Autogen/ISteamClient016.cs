@@ -7,6 +7,7 @@ using Steam4NET.Attributes;
 namespace Steam4NET
 {
 
+	[InterfaceVersion("SteamClient016")]
 	public interface ISteamClient016
 	{
 		[VTableSlot(0)]

@@ -64,6 +64,24 @@ namespace Steam4NET
 		k_EUserUGCListSortOrder_ForModeration = 6,
 	};
 	
+	public enum EItemUpdateStatus : int
+	{
+		k_EItemUpdateStatusInvalid = 0,
+		k_EItemUpdateStatusPreparingConfig = 1,
+		k_EItemUpdateStatusPreparingContent = 2,
+		k_EItemUpdateStatusUploadingContent = 3,
+		k_EItemUpdateStatusUploadingPreviewFile = 4,
+		k_EItemUpdateStatusCommittingChanges = 5,
+	};
+	
+	public enum EItemPreviewType : int
+	{
+	};
+	
+	public enum EItemStatistic : int
+	{
+	};
+	
 	[StructLayout(LayoutKind.Sequential,Pack=8)]
 	public struct SteamUGCDetails_t
 	{
@@ -101,24 +119,6 @@ namespace Steam4NET
 		public UInt32 m_unVotesDown;
 		public float m_flScore;
 		public UInt32 m_unNumChildren;
-	};
-	
-	public enum EItemUpdateStatus : int
-	{
-		k_EItemUpdateStatusInvalid = 0,
-		k_EItemUpdateStatusPreparingConfig = 1,
-		k_EItemUpdateStatusPreparingContent = 2,
-		k_EItemUpdateStatusUploadingContent = 3,
-		k_EItemUpdateStatusUploadingPreviewFile = 4,
-		k_EItemUpdateStatusCommittingChanges = 5,
-	};
-	
-	public enum EItemPreviewType : int
-	{
-	};
-	
-	public enum EItemStatistic : int
-	{
 	};
 	
 	[StructLayout(LayoutKind.Sequential,Pack=8)]

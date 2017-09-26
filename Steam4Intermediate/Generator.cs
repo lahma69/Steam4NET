@@ -98,7 +98,7 @@ namespace Steam4Intermediate
 
             foreach (INode node in NodesByType[typeof(FileNode)])
             {
-                if (node.name.Contains("Open Steamworks"))
+                if (node.name.Contains("OpenSteamworks"))
                 {
                     node.EmitCode(this, 0, 0);
                 }

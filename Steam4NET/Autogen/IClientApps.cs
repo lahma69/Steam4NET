@@ -28,5 +28,7 @@ namespace Steam4NET
 		bool BGetDLCDataByIndex(UInt32 unAppID, Int32 iDLC, ref UInt32 pDlcAppID, ref bool pbAvailable, StringBuilder pchName, Int32 cchNameBufferSize);
 		[VTableSlot(8)]
 		Int32 GetAppType(UInt32 unAppID);
+		[VTableSlot(9)]
+		Int32 GetStoreTagLocalization(ELanguage eUnk, ref UInt32 uUnk, Int32 iUnk1, Byte[] pchBuf, Int32 iUnk2);
 	};
 }

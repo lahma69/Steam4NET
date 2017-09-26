@@ -77,60 +77,62 @@ namespace Steam4NET
 		[VTableSlot(32)]
 		EUIMode GetCurrentUIMode();
 		[VTableSlot(33)]
-		void SetLauncherType(ELauncherType eLauncherType);
+		void ShutdownLauncher(bool arg0);
 		[VTableSlot(34)]
-		ELauncherType GetLauncherType();
+		void SetLauncherType(ELauncherType eLauncherType);
 		[VTableSlot(35)]
-		bool ShowGamepadTextInput(EGamepadTextInputMode eInputMode, EGamepadTextInputLineMode eInputLineMode, string szText, UInt32 uMaxLength, string szUnk);
+		ELauncherType GetLauncherType();
 		[VTableSlot(36)]
-		UInt32 GetEnteredGamepadTextLength();
+		bool ShowGamepadTextInput(EGamepadTextInputMode eInputMode, EGamepadTextInputLineMode eInputLineMode, string szText, UInt32 uMaxLength, string szUnk);
 		[VTableSlot(37)]
-		bool GetEnteredGamepadTextInput(StringBuilder pchValue, UInt32 cchValueMax);
+		UInt32 GetEnteredGamepadTextLength();
 		[VTableSlot(38)]
-		void GamepadTextInputClosed(Int32 hSteamPipe, bool arg1, string arg2);
+		bool GetEnteredGamepadTextInput(StringBuilder pchValue, UInt32 cchValueMax);
 		[VTableSlot(39)]
-		void SetSpew(ESpewGroup eSpewGroup, Int32 iSpewLevel, Int32 iLogLevel);
+		void GamepadTextInputClosed(Int32 hSteamPipe, bool arg1, string arg2);
 		[VTableSlot(40)]
-		bool BDownloadsDisabled();
+		void SetSpew(ESpewGroup eSpewGroup, Int32 iSpewLevel, Int32 iLogLevel);
 		[VTableSlot(41)]
-		void SetFocusedWindow(EWindowType eWindowType, CGameID gameID, UInt64 ulUnk);
+		bool BDownloadsDisabled();
 		[VTableSlot(42)]
-		string GetSteamUILanguage();
+		void SetFocusedWindow(EWindowType eWindowType, CGameID gameID, UInt64 ulUnk);
 		[VTableSlot(43)]
-		UInt64 CheckSteamReachable();
+		string GetSteamUILanguage();
 		[VTableSlot(44)]
-		void SetLastGameLaunchMethod(EGameLaunchMethod eGameLaunchMethod);
+		UInt64 CheckSteamReachable();
 		[VTableSlot(45)]
-		void SetVideoAdapterInfo(Int32 arg0, Int32 arg1, Int32 arg2, Int32 arg3, Int32 arg4);
+		void SetLastGameLaunchMethod(EGameLaunchMethod eGameLaunchMethod);
 		[VTableSlot(46)]
-		void SetControllerOverrideMode(CGameID gameID, string szUnk);
+		void SetVideoAdapterInfo(Int32 arg0, Int32 arg1, Int32 arg2, Int32 arg3, Int32 arg4, Int32 arg5, string arg6);
 		[VTableSlot(47)]
-		void SetOverlayWindowFocusForPipe(bool arg0, bool arg1, CGameID gameID);
+		void SetControllerOverrideMode(CGameID gameID, string szUnk, UInt32 uUnk);
 		[VTableSlot(48)]
-		CGameID GetGameOverlayUIInstanceFocusGameID(ref bool pbUnk);
+		void SetOverlayWindowFocusForPipe(bool arg0, bool arg1, CGameID gameID);
 		[VTableSlot(49)]
-		bool SetControllerConfigFileForAppID(UInt32 unAppID, string pszControllerConfigFile);
+		CGameID GetGameOverlayUIInstanceFocusGameID(ref bool pbUnk);
 		[VTableSlot(50)]
-		bool GetControllerConfigFileForAppID(UInt32 unAppID, string pszControllerConfigFile, UInt32 cubControllerConfigFile);
+		bool SetControllerConfigFileForAppID(UInt32 unAppID, string pszControllerConfigFile);
 		[VTableSlot(51)]
-		bool IsSteamRunningInVR();
+		bool GetControllerConfigFileForAppID(UInt32 unAppID, string pszControllerConfigFile, UInt32 cubControllerConfigFile);
 		[VTableSlot(52)]
-		bool BIsRunningOnAlienwareAlpha();
+		bool IsSteamRunningInVR();
 		[VTableSlot(53)]
-		void StartVRDashboard();
+		bool BIsRunningOnAlienwareAlpha();
 		[VTableSlot(54)]
-		bool IsVRHeadsetStreamingEnabled(UInt32 unk);
+		void StartVRDashboard();
 		[VTableSlot(55)]
-		void SetVRHeadsetStreamingEnabled(UInt32 unk, bool arg1);
+		bool IsVRHeadsetStreamingEnabled(UInt32 unk);
 		[VTableSlot(56)]
-		Int32 GenerateSupportSystemReport();
+		void SetVRHeadsetStreamingEnabled(UInt32 unk, bool arg1);
 		[VTableSlot(57)]
-		bool GetSupportSystemReport(StringBuilder arg0, UInt32 unk, Byte[] unk_2, UInt32 unk_3);
+		Int32 GenerateSupportSystemReport();
 		[VTableSlot(58)]
-		UInt32 GetAppIdForPid(UInt32 unk);
+		bool GetSupportSystemReport(StringBuilder arg0, UInt32 unk, Byte[] unk_2, UInt32 unk_3);
 		[VTableSlot(59)]
-		void SetClientUIProcess();
+		UInt32 GetAppIdForPid(UInt32 unk);
 		[VTableSlot(60)]
+		void SetClientUIProcess();
+		[VTableSlot(61)]
 		bool BIsClientUIInForeground();
 	};
 }

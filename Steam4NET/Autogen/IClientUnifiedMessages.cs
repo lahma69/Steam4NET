@@ -11,14 +11,14 @@ namespace Steam4NET
 	public interface IClientUnifiedMessages
 	{
 		[VTableSlot(0)]
-		UInt64 SendMethod(string arg0, Byte[] arg1, UInt32 arg2, UInt64 arg3);
+		UInt64 SendMethod(string pchServiceMethod, Byte[] pRequest, UInt32 nBuf, UInt64 ctx);
 		[VTableSlot(1)]
-		bool GetMethodResponseInfo(UInt64 arg0, ref UInt32 arg1, ref EResult arg2);
+		bool GetMethodResponseInfo(UInt64 hUmsg, ref UInt32 pnResponse, ref EResult eResult);
 		[VTableSlot(2)]
-		bool GetMethodResponseData(UInt64 arg0, Byte[] arg1, UInt32 arg2, bool arg3);
+		bool GetMethodResponseData(UInt64 hUmsg, Byte[] pResponseBuf, UInt32 bufSize, bool autoRelease);
 		[VTableSlot(3)]
-		bool ReleaseMethod(UInt64 arg0);
+		bool ReleaseMethod(UInt64 hUmsg);
 		[VTableSlot(4)]
-		bool SendNotification(string arg0, Byte[] arg1, UInt32 arg2);
+		bool SendNotification(string pchNotification, Byte[] buf, UInt32 bufSize);
 	};
 }

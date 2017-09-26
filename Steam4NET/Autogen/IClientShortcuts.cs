@@ -63,40 +63,40 @@ namespace Steam4NET
 		[VTableSlot(25)]
 		UInt32 GetShortcutLastPlayedTime(UInt32 unAppID);
 		[VTableSlot(26)]
-		UInt32 AddShortcut(string arg0, string arg1, string arg2);
+		UInt32 AddShortcut(string szShortcutName, string szShortcutExe, string szUnk1, string szUnk2, string szhUnk3);
 		[VTableSlot(27)]
 		UInt32 AddTemporaryShortcut(string arg0, string arg1, string arg2);
 		[VTableSlot(28)]
 		UInt32 AddOpenVRShortcut(string arg0, string arg1, string arg2);
 		[VTableSlot(29)]
-		void SetShortcutFromFullpath(UInt32 arg0, string arg1);
+		void SetShortcutFromFullpath(UInt32 unAppID, string szPath);
 		[VTableSlot(30)]
-		void SetShortcutAppName(UInt32 arg0, string arg1);
+		void SetShortcutAppName(UInt32 unAppID, string szAppName);
 		[VTableSlot(31)]
-		void SetShortcutExe(UInt32 arg0, string arg1);
+		void SetShortcutExe(UInt32 unAppID, string szExePath);
 		[VTableSlot(32)]
-		void SetShortcutStartDir(UInt32 arg0, string arg1);
+		void SetShortcutStartDir(UInt32 unAppID, string szPath);
 		[VTableSlot(33)]
-		void SetShortcutIcon(UInt32 arg0, string arg1);
+		void SetShortcutIcon(UInt32 unAppID, string szIconPath);
 		[VTableSlot(34)]
-		void SetShortcutCommandLine(UInt32 arg0, string arg1);
+		void SetShortcutCommandLine(UInt32 unAppID, string szCommandLine);
 		[VTableSlot(35)]
-		void ClearShortcutUserTags(UInt32 arg0);
+		void ClearShortcutUserTags(UInt32 unAppID);
 		[VTableSlot(36)]
-		void AddShortcutUserTag(UInt32 arg0, string arg1);
+		void AddShortcutUserTag(UInt32 unAppID, string szTag);
 		[VTableSlot(37)]
-		void RemoveShortcutUserTag(UInt32 arg0, string arg1);
+		void RemoveShortcutUserTag(UInt32 unAppID, string szTag);
 		[VTableSlot(38)]
-		void SetShortcutHidden(UInt32 arg0, bool arg1);
+		void SetShortcutHidden(UInt32 unAppID, bool arg1);
 		[VTableSlot(39)]
 		void SetAllowDesktopConfig(UInt32 arg0, bool arg1);
 		[VTableSlot(40)]
 		void SetOpenVRShortcut(UInt32 arg0, bool arg1);
 		[VTableSlot(41)]
-		void RemoveShortcut(UInt32 arg0);
+		void RemoveShortcut(UInt32 unAppID);
 		[VTableSlot(42)]
 		void RemoveAllTemporaryShortcuts();
 		[VTableSlot(43)]
-		bool LaunchShortcut(UInt32 arg0);
+		bool LaunchShortcut(UInt32 unAppID);
 	};
 }

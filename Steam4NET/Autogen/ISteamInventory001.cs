@@ -55,8 +55,8 @@ namespace Steam4NET
 		[VTableSlot(21)]
 		bool GetItemDefinitionProperty(Int32 iDefinition, string pchPropertyName, StringBuilder pchValueBuffer, ref UInt32 punValueBufferSize);
 		[VTableSlot(22)]
-		UInt64 RequestEligiblePromoItemDefinitionsIDs(CSteamID arg0);
+		UInt64 RequestEligiblePromoItemDefinitionsIDs(CSteamID steamID);
 		[VTableSlot(23)]
-		bool GetEligiblePromoItemDefinitionIDs(CSteamID arg0, ref Int32 arg1, ref UInt32 arg2);
+		bool GetEligiblePromoItemDefinitionIDs(CSteamID steamID, ref Int32 pItemDefIDs, ref UInt32 punItemDefIDsArraySize);
 	};
 }

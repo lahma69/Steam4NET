@@ -15,64 +15,158 @@ namespace Steam4NET
 		[VTableSlot(1)]
 		UInt64 CreateQueryAllUGCRequest(EUGCQuery eQueryType, EUGCMatchingUGCType eMatchingeMatchingUGCTypeFileType, UInt32 nCreatorAppID, UInt32 nConsumerAppID, UInt32 unPage);
 		[VTableSlot(2)]
-		UInt64 SendQueryUGCRequest(UInt64 handle);
+		UInt64 CreateQueryUGCDetailsRequest(ref UInt64 arg0, UInt32 arg1);
 		[VTableSlot(3)]
-		bool GetQueryUGCResult(UInt64 handle, UInt32 index, ref SteamUGCDetails_t pDetails);
+		UInt64 SendQueryUGCRequest(UInt64 handle);
 		[VTableSlot(4)]
-		bool ReleaseQueryUGCRequest(UInt64 handle);
+		bool GetQueryUGCResult(UInt64 handle, UInt32 index, ref SteamUGCDetails_t pDetails);
 		[VTableSlot(5)]
-		bool AddRequiredTag(UInt64 handle, string pTagName);
+		bool GetQueryUGCPreviewURL(UInt64 handle, UInt32 arg1, StringBuilder arg2, UInt32 arg3);
 		[VTableSlot(6)]
-		bool AddExcludedTag(UInt64 handle, string pTagName);
+		bool GetQueryUGCImageURL(UInt64 handle, UInt32 arg1, StringBuilder arg2, UInt32 arg3, ref UInt32 arg4, ref UInt32 arg5);
 		[VTableSlot(7)]
-		bool SetReturnLongDescription(UInt64 handle, bool bReturnLongDescription);
+		bool GetQueryUGCMetadata(UInt64 handle, UInt32 arg1, StringBuilder arg2, UInt32 arg3);
 		[VTableSlot(8)]
-		bool SetReturnTotalOnly(UInt64 handle, bool bReturnTotalOnly);
+		bool GetQueryUGCChildren(UInt64 handle, UInt32 arg1, ref UInt64 arg2, UInt32 arg3);
 		[VTableSlot(9)]
-		bool SetAllowCachedResponse(UInt64 handle, UInt32 arg1);
+		bool GetQueryUGCStatistic(UInt64 handle, UInt32 arg1, EItemStatistic arg2, ref UInt64 arg3);
 		[VTableSlot(10)]
-		bool SetCloudFileNameFilter(UInt64 handle, string pMatchCloudFileName);
+		UInt32 GetQueryUGCNumAdditionalPreviews(UInt64 handle, UInt32 arg1);
 		[VTableSlot(11)]
-		bool SetMatchAnyTag(UInt64 handle, bool bMatchAnyTag);
+		bool GetQueryUGCAdditionalPreview(UInt64 handle, UInt32 arg1, UInt32 arg2, StringBuilder arg3, UInt32 arg4, StringBuilder arg5, UInt32 arg6, ref EItemPreviewType arg7);
 		[VTableSlot(12)]
-		bool SetSearchText(UInt64 handle, string pSearchText);
+		UInt32 GetQueryUGCNumKeyValueTags(UInt64 handle, UInt32 arg1);
 		[VTableSlot(13)]
-		bool SetRankedByTrendDays(UInt64 handle, UInt32 unDays);
+		bool GetQueryUGCKeyValueTag(UInt64 handle, UInt32 arg1, UInt32 arg2, StringBuilder arg3, UInt32 arg4, StringBuilder arg5, UInt32 arg6);
 		[VTableSlot(14)]
-		UInt64 RequestUGCDetails(UInt64 nPublishedFileID);
+		bool GetQueryUGCIsDepotBuild(UInt64 arg0, UInt32 arg1, ref bool arg2);
 		[VTableSlot(15)]
-		UInt64 CreateItem(UInt32 arg0, EWorkshopFileType arg1);
+		bool ReleaseQueryUGCRequest(UInt64 handle);
 		[VTableSlot(16)]
-		UInt64 UploadItemContent(UInt64 arg0, string arg1);
+		bool AddRequiredTag(UInt64 handle, string pTagName);
 		[VTableSlot(17)]
-		UInt64 UploadItemPreview(UInt64 arg0, string arg1);
+		bool AddExcludedTag(UInt64 handle, string pTagName);
 		[VTableSlot(18)]
-		UInt64 StartItemUpdate(UInt32 arg0, UInt64 arg1);
+		bool SetReturnOnlyIDs(UInt64 handle, bool bReturnOnlyIDs);
 		[VTableSlot(19)]
-		bool SetItemTitle(UInt64 arg0, string arg1);
+		bool SetReturnKeyValueTags(UInt64 handle, bool arg1);
 		[VTableSlot(20)]
-		bool SetItemChangeDescription(UInt64 arg0, string arg1);
+		bool SetReturnLongDescription(UInt64 handle, bool bReturnLongDescription);
 		[VTableSlot(21)]
-		bool SetItemDescription(UInt64 arg0, string arg1);
+		bool SetReturnMetadata(UInt64 handle, bool arg1);
 		[VTableSlot(22)]
-		bool SetItemVisibility(UInt64 arg0, ERemoteStoragePublishedFileVisibility arg1);
+		bool SetReturnChildren(UInt64 handle, bool arg1);
 		[VTableSlot(23)]
-		bool SetItemTags(UInt64 arg0, ref SteamParamStringArray_t arg1);
+		bool SetReturnAdditionalPreviews(UInt64 handle, bool arg1);
 		[VTableSlot(24)]
-		bool SetItemContent(UInt64 arg0, UInt64 arg1);
+		bool SetReturnTotalOnly(UInt64 handle, bool bReturnTotalOnly);
 		[VTableSlot(25)]
-		bool SetItemPreview(UInt64 arg0, UInt64 arg1);
+		bool SetReturnPlaytimeStats(UInt64 handle, UInt32 unDays);
 		[VTableSlot(26)]
-		UInt64 CommitItemUpdate(UInt64 arg0);
+		bool SetLanguage(UInt64 handle, string arg1);
 		[VTableSlot(27)]
-		UInt64 SubscribeItem(UInt32 arg0, UInt64 arg1);
+		bool SetAllowCachedResponse(UInt64 handle, UInt32 unMaxAgeSeconds);
 		[VTableSlot(28)]
-		UInt64 UnsubscribeItem(UInt32 arg0, UInt64 arg1);
+		bool SetCloudFileNameFilter(UInt64 handle, string pMatchCloudFileName);
 		[VTableSlot(29)]
-		UInt32 GetNumSubscribedItems(UInt32 arg0);
+		bool SetMatchAnyTag(UInt64 handle, bool bMatchAnyTag);
 		[VTableSlot(30)]
-		UInt32 GetSubscribedItems(UInt32 arg0, ref UInt64 arg1, UInt32 arg2);
+		bool SetSearchText(UInt64 handle, string pSearchText);
 		[VTableSlot(31)]
-		bool GetSubscribedItemInfo(UInt32 arg0, UInt64 arg1, StringBuilder arg2, Int32 arg3, StringBuilder arg4, Int32 arg5, ref EWorkshopFileType arg6, ref bool arg7, StringBuilder arg8, Int32 arg9, ref UInt64 arg10);
+		bool SetRankedByTrendDays(UInt64 handle, UInt32 unDays);
+		[VTableSlot(32)]
+		bool AddRequiredKeyValueTag(UInt64 handle, string arg1, string arg2);
+		[VTableSlot(33)]
+		UInt64 RequestUGCDetails(UInt64 nPublishedFileID, UInt32 unMaxAgeSeconds);
+		[VTableSlot(34)]
+		UInt64 CreateItem(UInt32 nConsumerAppId, EWorkshopFileType eFileType);
+		[VTableSlot(35)]
+		UInt64 StartItemUpdate(UInt32 nConsumerAppId, UInt64 nPublishedFileID);
+		[VTableSlot(36)]
+		bool SetItemTitle(UInt64 handle, string pchTitle);
+		[VTableSlot(37)]
+		bool SetItemDescription(UInt64 handle, string pchDescription);
+		[VTableSlot(38)]
+		bool SetItemUpdateLanguage(UInt64 handle, string arg1);
+		[VTableSlot(39)]
+		bool SetItemMetadata(UInt64 handle, string arg1);
+		[VTableSlot(40)]
+		bool SetItemVisibility(UInt64 handle, ERemoteStoragePublishedFileVisibility eVisibility);
+		[VTableSlot(41)]
+		bool SetItemTags(UInt64 updateHandle, ref SteamParamStringArray_t pTags);
+		[VTableSlot(42)]
+		bool SetItemContent(UInt64 handle, string pszContentFolder);
+		[VTableSlot(43)]
+		bool SetItemPreview(UInt64 handle, string pszPreviewFile);
+		[VTableSlot(44)]
+		Int32 SetAllowLegacyUpload(UInt64 arg0, bool arg1);
+		[VTableSlot(45)]
+		bool RemoveItemKeyValueTags(UInt64 handle, string arg1);
+		[VTableSlot(46)]
+		bool AddItemKeyValueTag(UInt64 handle, string arg1, string arg2);
+		[VTableSlot(47)]
+		bool AddItemPreviewFile(UInt64 handle, string arg1, EItemPreviewType arg2);
+		[VTableSlot(48)]
+		bool AddItemPreviewVideo(UInt64 handle, string arg1);
+		[VTableSlot(49)]
+		bool UpdateItemPreviewFile(UInt64 handle, UInt32 arg1, string arg2);
+		[VTableSlot(50)]
+		bool UpdateItemPreviewVideo(UInt64 handle, UInt32 arg1, string arg2);
+		[VTableSlot(51)]
+		bool RemoveItemPreview(UInt64 handle, UInt32 arg1);
+		[VTableSlot(52)]
+		UInt64 SubmitItemUpdate(UInt64 handle, string pchChangeNote);
+		[VTableSlot(53)]
+		EItemUpdateStatus GetItemUpdateProgress(UInt64 handle, ref UInt64 punBytesProcessed, ref UInt64 punBytesTotal);
+		[VTableSlot(54)]
+		UInt64 SetUserItemVote(UInt64 arg0, bool arg1);
+		[VTableSlot(55)]
+		UInt64 GetUserItemVote(UInt64 arg0);
+		[VTableSlot(56)]
+		UInt64 AddItemToFavorites(UInt32 arg0, UInt64 arg1);
+		[VTableSlot(57)]
+		UInt64 RemoveItemFromFavorites(UInt32 arg0, UInt64 arg1);
+		[VTableSlot(58)]
+		UInt64 SubscribeItem(UInt32 arg0, UInt64 nPublishedFileID, bool arg2);
+		[VTableSlot(59)]
+		UInt64 UnsubscribeItem(UInt32 arg0, UInt64 nPublishedFileID);
+		[VTableSlot(60)]
+		UInt32 GetNumSubscribedItems(UInt32 arg0);
+		[VTableSlot(61)]
+		UInt32 GetSubscribedItems(UInt32 arg0, ref UInt64 pvecPublishedFileID, UInt32 cMaxEntries);
+		[VTableSlot(62)]
+		UInt32 GetItemState(UInt32 arg0, UInt64 arg1);
+		[VTableSlot(63)]
+		bool GetItemInstallInfo(UInt32 arg0, UInt64 nPublishedFileID, ref UInt64 punSizeOnDisk, StringBuilder pchFolder, UInt32 cchFolderSize, ref bool pbLegacyItem);
+		[VTableSlot(64)]
+		bool GetItemDownloadInfo(UInt32 arg0, UInt64 arg1, ref UInt64 arg2, ref UInt64 arg3);
+		[VTableSlot(65)]
+		bool DownloadItem(UInt32 arg0, UInt64 arg1, bool arg2);
+		[VTableSlot(66)]
+		bool GetAppItemsStatus(UInt32 arg0, ref bool arg1, ref bool arg2);
+		[VTableSlot(67)]
+		bool BInitWorkshopForGameServer(UInt32 arg0, UInt32 arg1, string arg2);
+		[VTableSlot(68)]
+		void SuspendDownloads(UInt32 arg0, bool arg1);
+		[VTableSlot(69)]
+		UInt64 GetAllItemsSizeOnDisk(UInt32 arg0);
+		[VTableSlot(70)]
+		UInt64 StartPlaytimeTracking(UInt32 arg0, ref UInt64 publishedFields, UInt32 numPublishedFields);
+		[VTableSlot(71)]
+		UInt64 StopPlaytimeTracking(UInt32 arg0, ref UInt64 publishedFields, UInt32 numPublishedFields);
+		[VTableSlot(72)]
+		UInt64 StopPlaytimeTrackingForAllItems(UInt32 arg0);
+		[VTableSlot(73)]
+		UInt64 AddDependency(UInt64 nParentPublishedFileID, UInt64 nChildPublishedFileID);
+		[VTableSlot(74)]
+		UInt64 RemoveDependency(UInt64 nParentPublishedFileID, UInt64 nChildPublishedFileID);
+		[VTableSlot(75)]
+		UInt64 AddAppDependency(UInt64 nPublishedFileID, UInt32 nAppID);
+		[VTableSlot(76)]
+		UInt64 RemoveAppDependency(UInt64 nPublishedFileID, UInt32 nAppID);
+		[VTableSlot(77)]
+		bool GetAppDependencies(UInt64 nPublishedFileID);
+		[VTableSlot(78)]
+		UInt64 DeleteItem(UInt64 nPublishedFileID);
 	};
 }

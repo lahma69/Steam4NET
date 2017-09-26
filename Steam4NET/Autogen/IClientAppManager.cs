@@ -83,90 +83,96 @@ namespace Steam4NET
 		[VTableSlot(35)]
 		UInt32 GetDownloadingAppID();
 		[VTableSlot(36)]
-		bool SetAutoUpdateTimeRestriction(bool bUnk, Int32 iUnk1, Int32 iUnk2);
+		bool GetAutoUpdateTimeRestrictionEnabled();
 		[VTableSlot(37)]
-		bool GetAutoUpdateTimeRestriction(ref Int32 piUnk1, ref Int32 piUnk2);
+		void SetAutoUpdateTimeRestrictionEnabled(bool arg0);
 		[VTableSlot(38)]
-		EAppAutoUpdateBehavior GetAppAutoUpdateBehavior(UInt32 unAppID);
+		bool GetAutoUpdateTimeRestrictionHours(ref Int32 piUnk1, ref Int32 piUnk2);
 		[VTableSlot(39)]
-		bool SetAppAutoUpdateBehavior(UInt32 unAppID, EAppAutoUpdateBehavior eAppAutoUpdateBehavior);
+		bool SetAutoUpdateTimeRestrictionStartHour(Int32 iUnk);
 		[VTableSlot(40)]
-		bool SetAppAllowDownloadsWhileRunningBehavior(UInt32 unAppID, EAppAllowDownloadsWhileRunningBehavior eAppAllowDownloadsWhileRunningBehavior);
+		bool SetAutoUpdateTimeRestrictionEndHour(Int32 iUnk);
 		[VTableSlot(41)]
-		EAppAllowDownloadsWhileRunningBehavior GetAppAllowDownloadsWhileRunningBehavior(UInt32 unAppID);
+		EAppAutoUpdateBehavior GetAppAutoUpdateBehavior(UInt32 unAppID);
 		[VTableSlot(42)]
-		void SetAllowDownloadsWhileAnyAppRunning(bool bAllowDownloadsWhileAnyAppRunning);
+		bool SetAppAutoUpdateBehavior(UInt32 unAppID, EAppAutoUpdateBehavior eAppAutoUpdateBehavior);
 		[VTableSlot(43)]
-		bool BAllowDownloadsWhileAnyAppRunning();
+		bool SetAppAllowDownloadsWhileRunningBehavior(UInt32 unAppID, EAppAllowDownloadsWhileRunningBehavior eAppAllowDownloadsWhileRunningBehavior);
 		[VTableSlot(44)]
-		bool ChangeAppDownloadQueuePlacement(UInt32 unAppID, EAppDownloadQueuePlacement eAppDownloadQueuePlacement);
+		EAppAllowDownloadsWhileRunningBehavior GetAppAllowDownloadsWhileRunningBehavior(UInt32 unAppID);
 		[VTableSlot(45)]
-		Int32 GetAppDownloadQueueIndex(UInt32 unAppID);
+		void SetAllowDownloadsWhileAnyAppRunning(bool bAllowDownloadsWhileAnyAppRunning);
 		[VTableSlot(46)]
-		Int32 GetAppAutoUpdateDelayedUntilTime(UInt32 unAppID);
+		bool BAllowDownloadsWhileAnyAppRunning();
 		[VTableSlot(47)]
-		bool BHasLocalContentServer();
+		bool ChangeAppDownloadQueuePlacement(UInt32 unAppID, EAppDownloadQueuePlacement eAppDownloadQueuePlacement);
 		[VTableSlot(48)]
-		bool BuildBackup(UInt32 unAppID, UInt64 ullMaxFileSize, string cszBackupPath);
+		Int32 GetAppDownloadQueueIndex(UInt32 unAppID);
 		[VTableSlot(49)]
-		bool BuildInstaller(string cszProjectFile, string cszBackupPath, string arg2, string arg3);
+		Int32 GetAppAutoUpdateDelayedUntilTime(UInt32 unAppID);
 		[VTableSlot(50)]
-		bool CancelBackup();
+		bool BHasLocalContentServer();
 		[VTableSlot(51)]
-		EAppUpdateError RestoreApp(UInt32 unAppID, Int32 iBaseFolder, string cszBackupPath);
+		bool BuildBackup(UInt32 unAppID, UInt64 ullMaxFileSize, string cszBackupPath);
 		[VTableSlot(52)]
-		bool CanMoveApp(UInt32 unAppID);
+		bool BuildInstaller(string cszProjectFile, string cszBackupPath, string arg2, string arg3);
 		[VTableSlot(53)]
-		Int32 MoveApp(UInt32 unAppID, Int32 unk);
+		bool CancelBackup();
 		[VTableSlot(54)]
-		Int32 GetMoveAppProgress(UInt32 unAppID, ref UInt64 unk_1, ref UInt64 unk_2, ref UInt32 unk_3);
+		EAppUpdateError RestoreApp(UInt32 unAppID, Int32 iBaseFolder, string cszBackupPath);
 		[VTableSlot(55)]
-		bool CancelMoveApp(UInt32 unAppID);
+		bool CanMoveApp(UInt32 unAppID);
 		[VTableSlot(56)]
-		bool BNeedsFile(UInt32 unAppID, string cszFilePath, UInt64 ullFileSize, UInt32 uUnk);
+		Int32 MoveApp(UInt32 unAppID, Int32 unk);
 		[VTableSlot(57)]
-		bool BAddFileOnDisk(UInt32 unAppID, string cszFilePath, UInt64 ullFileSize, UInt32 uUnk, SHADigestWrapper_t ubSha1);
+		bool GetMoveAppProgress(UInt32 unAppID, ref UInt64 unk_1, ref UInt64 unk_2, ref UInt32 unk_3);
 		[VTableSlot(58)]
-		UInt32 FinishAddingFiles(UInt32 unAppID);
+		bool CancelMoveApp(UInt32 unAppID);
 		[VTableSlot(59)]
-		bool GetAppStateInfo(UInt32 unAppID, ref EAppReleaseState peReleaseState, ref EAppOwnershipFlags peOwnershipFlags, ref EAppState peAppState, ref CSteamID pSteamID, ref UInt32 uUnk1, ref UInt32 uUnk2);
+		bool BNeedsFile(UInt32 unAppID, string cszFilePath, UInt64 ullFileSize, UInt32 uUnk);
 		[VTableSlot(60)]
-		bool BIsAvailableOnPlatform(UInt32 uUnk, string pUnk);
+		bool BAddFileOnDisk(UInt32 unAppID, string cszFilePath, UInt64 ullFileSize, UInt32 uUnk, SHADigestWrapper_t ubSha1);
 		[VTableSlot(61)]
-		Int32 GetNumInstallBaseFolders();
+		UInt32 FinishAddingFiles(UInt32 unAppID);
 		[VTableSlot(62)]
-		Int32 GetInstallBaseFolder(Int32 iBaseFolder, StringBuilder pchPath, Int32 cbPath);
+		bool GetAppStateInfo(UInt32 unAppID, ref EAppReleaseState peReleaseState, ref EAppOwnershipFlags peOwnershipFlags, ref EAppState peAppState, ref CSteamID pSteamID, ref UInt32 uUnk1, ref UInt32 uUnk2);
 		[VTableSlot(63)]
-		Int32 AddInstallBaseFolder(string szPath);
+		bool BIsAvailableOnPlatform(UInt32 uUnk, string pUnk);
 		[VTableSlot(64)]
-		bool RemoveInstallBaseFolder(Int32 iBaseFolder);
+		Int32 GetNumInstallBaseFolders();
 		[VTableSlot(65)]
-		UInt64 GetFreeDiskSpace(Int32 iBaseFolder);
+		Int32 GetInstallBaseFolder(Int32 iBaseFolder, StringBuilder pchPath, Int32 cbPath);
 		[VTableSlot(66)]
-		Int32 GetAppInstallBaseFolder(Int32 iBaseFolder);
+		Int32 AddInstallBaseFolder(string szPath);
 		[VTableSlot(67)]
-		void ForceInstallDirOverride(string cszPath);
+		bool RemoveInstallBaseFolder(Int32 iBaseFolder);
 		[VTableSlot(68)]
-		bool SetDownloadThrottleRateKbps(Int32 iRate, bool arg1);
+		UInt64 GetFreeDiskSpace(Int32 iBaseFolder);
 		[VTableSlot(69)]
-		Int32 GetDownloadThrottleRateKbps(bool arg0);
+		Int32 GetAppInstallBaseFolder(Int32 iBaseFolder);
 		[VTableSlot(70)]
-		void SuspendDownloadThrottling(bool bSuspend);
+		void ForceInstallDirOverride(string cszPath);
 		[VTableSlot(71)]
-		void SetThrottleDownloadsWhileStreaming(bool arg0);
+		bool SetDownloadThrottleRateKbps(Int32 iRate, bool arg1);
 		[VTableSlot(72)]
-		bool BThrottleDownloadsWhileStreaming();
+		Int32 GetDownloadThrottleRateKbps(bool arg0);
 		[VTableSlot(73)]
-		string GetLaunchQueryParam(UInt32 unAppID, string pchKey);
+		void SuspendDownloadThrottling(bool bSuspend);
 		[VTableSlot(74)]
-		void BeginLaunchQueryParams(UInt32 unAppId);
+		void SetThrottleDownloadsWhileStreaming(bool arg0);
 		[VTableSlot(75)]
-		void SetLaunchQueryParam(UInt32 unAppId, string pchKey, string pchValue);
+		bool BThrottleDownloadsWhileStreaming();
 		[VTableSlot(76)]
-		bool CommitLaunchQueryParams(UInt32 unAppId);
+		string GetLaunchQueryParam(UInt32 unAppID, string pchKey);
 		[VTableSlot(77)]
-		void AddContentLogLine(string arg0);
+		void BeginLaunchQueryParams(UInt32 unAppId);
 		[VTableSlot(78)]
+		void SetLaunchQueryParam(UInt32 unAppId, string pchKey, string pchValue);
+		[VTableSlot(79)]
+		bool CommitLaunchQueryParams(UInt32 unAppId);
+		[VTableSlot(80)]
+		void AddContentLogLine(string arg0);
+		[VTableSlot(81)]
 		bool GetSystemIconFile(UInt32 unAppId, StringBuilder arg1, Int32 arg2);
 	};
 }

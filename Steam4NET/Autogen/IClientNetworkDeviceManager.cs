@@ -39,28 +39,60 @@ namespace Steam4NET
 		[VTableSlot(1)]
 		void RefreshDevices();
 		[VTableSlot(2)]
-		ENetworkDeviceState GetWirelessDeviceState();
+		Int32 EnumerateNetworkDevices(UInt32 arg0, ref UInt32 arg1);
 		[VTableSlot(3)]
-		Int32 GetWiredDeviceCount();
+		Int32 GetDeviceType(UInt32 arg0);
 		[VTableSlot(4)]
-		ENetworkDeviceState GetWiredDeviceState(Int32 iDevice);
+		bool IsCurrentDevice(UInt32 arg0);
 		[VTableSlot(5)]
-		bool IsWiredDevicePluggedIn(Int32 iDevice);
+		bool IsCurrentlyConnected(UInt32 arg0);
 		[VTableSlot(6)]
-		bool GetActiveWirelessAccessPoint(ref WirelessAccessPoint_t pAccessPoint);
+		Int32 GetDeviceIP4(UInt32 arg0, UInt32 arg1, ref UInt32 arg2);
 		[VTableSlot(7)]
-		bool EnumerateWirelessAccessPoints(ref WirelessAccessPoint_t pAccessPoint, UInt32 uUnk, ref UInt32 puUnk);
+		Int32 GetDeviceBroadcastIP4(UInt32 arg0, UInt32 arg1, ref UInt32 arg2);
 		[VTableSlot(8)]
-		bool GetCachedCredentialsForSSID(string pchUnk, ref WirelessCredentials_t pCredentials);
+		string GetDeviceVendor(UInt32 arg0);
 		[VTableSlot(9)]
-		EWirelessSecurityFlags GetPreferredSecurityMethod(UInt32 uUnk);
+		string GetDeviceProduct(UInt32 arg0);
 		[VTableSlot(10)]
-		ENetworkDeviceManagerError ActivateWiredConnection(Int32 iConnection);
+		string GetMacAddress(UInt32 arg0);
 		[VTableSlot(11)]
-		void DeactivateWiredConnection(Int32 iConnection);
+		Int32 GetSubnetMaskBitCount(UInt32 arg0, UInt32 arg1, ref UInt32 arg2);
 		[VTableSlot(12)]
-		ENetworkDeviceManagerError ConnectToAccessPoint(string pchUnk1, bool bUnk, EWirelessSecurityFlags eSecurityFlags, string pchUnk2);
+		Int32 GetRouterAddressIP4(UInt32 arg0, UInt32 arg1, ref UInt32 arg2);
 		[VTableSlot(13)]
-		void DisconnectFromAccessPoint();
+		Int32 GetDNSResolversIP4(UInt32 arg0, UInt32 arg1, ref UInt32 arg2);
+		[VTableSlot(14)]
+		Int32 GetDeviceState(UInt32 arg0);
+		[VTableSlot(15)]
+		bool GetDevicePluggedState(UInt32 arg0);
+		[VTableSlot(16)]
+		Int32 EnumerateWirelessEndpoints(UInt32 arg0, UInt32 arg1, ref UInt32 arg2);
+		[VTableSlot(17)]
+		Int32 GetConnectedWirelessEndpointSSID(UInt32 arg0);
+		[VTableSlot(18)]
+		Int32 GetWirelessSecurityCapabilities(UInt32 arg0);
+		[VTableSlot(19)]
+		string GetWirelessEndpointSSIDUserDisplayString(UInt32 arg0, UInt32 arg1);
+		[VTableSlot(20)]
+		Int32 GetWirelessEndpointStrength(UInt32 arg0, UInt32 arg1);
+		[VTableSlot(21)]
+		bool IsSecurityRequired(UInt32 arg0, UInt32 arg1);
+		[VTableSlot(22)]
+		string GetCachedWirelessCredentials(UInt32 arg0, UInt32 arg1);
+		[VTableSlot(23)]
+		bool DisconnectFromDevice(UInt32 arg0, bool arg1);
+		[VTableSlot(24)]
+		void SetCustomIPSettings(UInt32 arg0, UInt32 arg1, UInt32 arg2, UInt32 arg3, UInt32 arg4, UInt32 arg5);
+		[VTableSlot(25)]
+		bool ConnectToDevice(UInt32 arg0, UInt32 arg1, string arg2, string arg3, UInt32 arg4, bool arg5, bool arg6);
+		[VTableSlot(26)]
+		bool IsWirelessEndpointForgettable(UInt32 arg0, UInt32 arg1);
+		[VTableSlot(27)]
+		void ForgetWirelessEndpointAutoconnect(UInt32 arg0, UInt32 arg1);
+		[VTableSlot(28)]
+		bool IsUsingDHCP(UInt32 arg0);
+		[VTableSlot(29)]
+		bool GetCustomIPSettings(UInt32 arg0, ref UInt32 arg1, ref UInt32 arg2, ref UInt32 arg3, ref UInt32 arg4, ref UInt32 arg5);
 	};
 }

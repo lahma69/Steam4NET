@@ -87,6 +87,7 @@ namespace Steam4NET
 		k_EAppTypePlugin = 4096,
 		k_EAppTypeMusic = 8192,
 		k_EAppTypeSeries = 16384,
+		k_EAppTypeComic = 32768,
 		k_EAppTypeShortcut = 1073741824,
 	};
 	
@@ -231,6 +232,10 @@ namespace Steam4NET
 		k_EAppDownloadQueuePlacementDown = 4,
 		k_EAppDownloadQueuePlacementLast = 5,
 		k_EAppDownloadQueuePlacementPaused = 6,
+	};
+	
+	public enum ELanguage : int
+	{
 	};
 	
 	[StructLayout(LayoutKind.Sequential,Pack=8)]
@@ -412,6 +417,36 @@ namespace Steam4NET
 	{
 		public const int k_iCallback = 1019;
 		public UInt32 m_nAppID;
+	};
+	
+	[StructLayout(LayoutKind.Sequential,Pack=8)]
+	[CallbackIdentity(1020)]
+	public struct CheckAppBetaPasswordResponse_t
+	{
+		public const int k_iCallback = 1020;
+		public UInt32 m_nAppID;
+		public EResult m_eResult;
+		[MarshalAs(UnmanagedType.ByValTStr, SizeConst = 64)]
+		public string m_szBetaName;
+	};
+	
+	[StructLayout(LayoutKind.Sequential,Pack=8)]
+	[CallbackIdentity(1025)]
+	public struct AppUpdateProgress_t
+	{
+		public const int k_iCallback = 1025;
+		public UInt32 m_nAppID;
+	};
+	
+	[StructLayout(LayoutKind.Sequential,Pack=8)]
+	[CallbackIdentity(1027)]
+	public struct AppLaunchResult_t
+	{
+		public const int k_iCallback = 1027;
+		public GameID_t m_GameID;
+		public EAppUpdateError m_eAppError;
+		[MarshalAs(UnmanagedType.ByValTStr, SizeConst = 512)]
+		public string m_szErrorDetail;
 	};
 	
 }
