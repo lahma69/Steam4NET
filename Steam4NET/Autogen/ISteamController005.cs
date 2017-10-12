@@ -62,7 +62,5 @@ namespace Steam4NET
 		string GetStringForActionOrigin(EControllerActionOrigin eOrigin);
 		[VTableSlot(25)]
 		string GetGlyphForActionOrigin(EControllerActionOrigin eOrigin);
-		[VTableSlot(26)]
-		EControllerType GetControllerTypeForHandle(UInt64 hController);
 	};
 }

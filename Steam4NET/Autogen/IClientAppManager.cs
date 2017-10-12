@@ -149,30 +149,32 @@ namespace Steam4NET
 		[VTableSlot(68)]
 		UInt64 GetFreeDiskSpace(Int32 iBaseFolder);
 		[VTableSlot(69)]
-		Int32 GetAppInstallBaseFolder(Int32 iBaseFolder);
+		bool BGetDiskSpaceStats(Int32 iBaseFolder, ref UInt64 arg1, ref UInt64 arg2);
 		[VTableSlot(70)]
-		void ForceInstallDirOverride(string cszPath);
+		Int32 GetAppInstallBaseFolder(Int32 iBaseFolder);
 		[VTableSlot(71)]
-		bool SetDownloadThrottleRateKbps(Int32 iRate, bool arg1);
+		void ForceInstallDirOverride(string cszPath);
 		[VTableSlot(72)]
-		Int32 GetDownloadThrottleRateKbps(bool arg0);
+		bool SetDownloadThrottleRateKbps(Int32 iRate, bool arg1);
 		[VTableSlot(73)]
-		void SuspendDownloadThrottling(bool bSuspend);
+		Int32 GetDownloadThrottleRateKbps(bool arg0);
 		[VTableSlot(74)]
-		void SetThrottleDownloadsWhileStreaming(bool arg0);
+		void SuspendDownloadThrottling(bool bSuspend);
 		[VTableSlot(75)]
-		bool BThrottleDownloadsWhileStreaming();
+		void SetThrottleDownloadsWhileStreaming(bool arg0);
 		[VTableSlot(76)]
-		string GetLaunchQueryParam(UInt32 unAppID, string pchKey);
+		bool BThrottleDownloadsWhileStreaming();
 		[VTableSlot(77)]
-		void BeginLaunchQueryParams(UInt32 unAppId);
+		string GetLaunchQueryParam(UInt32 unAppID, string pchKey);
 		[VTableSlot(78)]
-		void SetLaunchQueryParam(UInt32 unAppId, string pchKey, string pchValue);
+		void BeginLaunchQueryParams(UInt32 unAppId);
 		[VTableSlot(79)]
-		bool CommitLaunchQueryParams(UInt32 unAppId);
+		void SetLaunchQueryParam(UInt32 unAppId, string pchKey, string pchValue);
 		[VTableSlot(80)]
-		void AddContentLogLine(string arg0);
+		bool CommitLaunchQueryParams(UInt32 unAppId);
 		[VTableSlot(81)]
+		void AddContentLogLine(string arg0);
+		[VTableSlot(82)]
 		bool GetSystemIconFile(UInt32 unAppId, StringBuilder arg1, Int32 arg2);
 	};
 }

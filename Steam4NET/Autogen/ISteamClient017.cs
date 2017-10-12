@@ -59,7 +59,7 @@ namespace Steam4NET
 		[VTableSlot(23)]
 		TClass GetISteamHTTP<TClass>(Int32 hSteamuser, Int32 hSteamPipe) where TClass : class;
 		[VTableSlot(24)]
-		TClass GetISteamUnifiedMessages<TClass>(Int32 hSteamuser, Int32 hSteamPipe) where TClass : class;
+		TClass DEPRECATED_GetISteamUnifiedMessages<TClass>(Int32 hSteamuser, Int32 hSteamPipe) where TClass : class;
 		[VTableSlot(25)]
 		TClass GetISteamController<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
 		[VTableSlot(26)]

@@ -150,5 +150,9 @@ namespace Steam4NET
 		UInt64 IsFollowing(CSteamID steamID);
 		[VTableSlot(69)]
 		UInt64 EnumerateFollowingList(UInt32 unStartIndex);
+		[VTableSlot(70)]
+		bool IsClanPublic(CSteamID steamID);
+		[VTableSlot(71)]
+		bool IsClanOfficialGameGroup(CSteamID steamID);
 	};
 }

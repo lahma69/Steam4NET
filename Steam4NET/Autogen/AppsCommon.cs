@@ -13,6 +13,7 @@ namespace Steam4NET
 		k_EAppStateUninstalled = 1,
 		k_EAppStateUpdateRequired = 2,
 		k_EAppStateFullyInstalled = 4,
+		k_EAppStateUpdateQueued = 8,
 		k_EAppStateUpdateOptional = 16,
 		k_EAppStateFilesMissing = 32,
 		k_EAppStateSharedOnly = 64,
@@ -172,6 +173,7 @@ namespace Steam4NET
 		k_EAppUpdateErrorSiteLicenseLocked = 44,
 		k_EAppUpdateErrorParentalControlBlocked = 45,
 		k_EAppUpdateErrorCreateProcessFailed = 46,
+		k_EAppUpdateErrorSteamClientOutOfDate = 47,
 	};
 	
 	public enum ERegisterActivactionCodeResult : int
