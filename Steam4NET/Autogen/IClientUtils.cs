@@ -77,8 +77,8 @@ namespace Steam4NET
 		[VTableSlot(32)]
 		EUIMode GetCurrentUIMode();
 		[VTableSlot(33)]
-		void ShutdownLauncher(bool arg0);
-		[VTableSlot(34)]
+		void ShutdownLauncher(bool arg0); // Lahma: In new beta, this sig changed to: void ShutdownLauncher(bool arg0, bool arg1);
+        [VTableSlot(34)]
 		void SetLauncherType(ELauncherType eLauncherType);
 		[VTableSlot(35)]
 		ELauncherType GetLauncherType();

@@ -6,9 +6,9 @@ using Steam4NET.Attributes;
 
 namespace Steam4NET
 {
-
-	[InterfaceVersion("CLIENTENGINE_INTERFACE_VERSION004")]
-	public interface IClientEngine
+    // ClientEngineInterface version changed in 2017-12-13 Steam Client update (VERSION004 -> VERSION005)
+    [InterfaceVersion("CLIENTENGINE_INTERFACE_VERSION005")]
+    public interface IClientEngine
 	{
 		[VTableSlot(0)]
 		Int32 CreateSteamPipe();
@@ -133,12 +133,15 @@ namespace Steam4NET
 		[VTableSlot(60)]
 		TClass GetIClientAppDisableUpdate<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
 		[VTableSlot(61)]
-		Int32 Set_ClientAPI_CPostAPIResultInProcess(ref IntPtr arg0);
-		[VTableSlot(62)]
+        Int32 Set_ClientAPI_CPostAPIResultInProcess(ref IntPtr arg0); // Alternative name: Set_Client_API_CCheckCallbackRegisteredInProcess
+        [VTableSlot(62)]
 		TClass GetIClientBluetoothManager<TClass>(Int32 hSteamPipe) where TClass : class;
 		[VTableSlot(63)]
 		TClass GetIClientSharedConnection<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
 		[VTableSlot(64)]
 		TClass GetIClientShader<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
+        // Added in 2017-12-14 Steam Client update
+        [VTableSlot(65)]
+        TClass GetIClientNetworkingSocketsSerialized<TClass>(Int32 hSteamUser, Int32 hSteamPipe) where TClass : class;
 	};
 }
